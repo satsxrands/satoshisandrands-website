@@ -22,6 +22,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* Burger button: hidden by default, shown only on mobile */
+.mobile-menu-btn { display: none; }
+
 /* ── Mobile overrides ──────────────────────────────────── */
 @media (max-width: 640px) {
   /* Homepage nav: tighten padding, hide brand text (links stay) */
@@ -69,9 +72,6 @@ html { scroll-behavior: smooth; }
   /* Footer */
   .site-footer { padding: 20px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
 }
-
-/* Burger button hidden by default on desktop */
-.mobile-menu-btn { display: none !important; }
 
 body {
   background: var(--bg);

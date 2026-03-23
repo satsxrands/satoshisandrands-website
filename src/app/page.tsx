@@ -56,7 +56,7 @@ export default function Home() {
             SATOSHIS & RANDS
           </span>
         </div>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <div className="nav-links" style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <Link
             href="/tax-tools/cgt"
             style={{
@@ -106,6 +106,7 @@ export default function Home() {
 
       {/* Hero */}
       <section
+        className="hero-section"
         style={{
           padding: "100px 40px 80px",
           maxWidth: 960,
@@ -137,6 +138,7 @@ export default function Home() {
             padding: "5px 16px",
             marginBottom: 28,
           }}
+          className="eyebrow-badge"
         >
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--gold)", display: "inline-block" }} />
           <span
@@ -287,7 +289,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+        <div className="tools-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
           {tools.map((t) => (
             <Link
               key={t.href}
@@ -387,7 +389,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
+        <div className="upcoming-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
           {upcoming.map((u) => (
             <div
               key={u.label}
@@ -428,6 +430,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer
+        className="site-footer"
         style={{
           borderTop: "1px solid var(--border)",
           padding: "28px 40px",

@@ -112,7 +112,7 @@ export default function ClassifierPage() {
   });
 
   return (
-    <div style={{ padding: "40px", maxWidth: 680, width: "100%" }}>
+    <div className="tool-page" style={{ padding: "40px", maxWidth: 680, width: "100%" }}>
       <div style={{ borderLeft: "3px solid var(--green)", paddingLeft: 16, marginBottom: 32 }}>
         <h1
           style={{

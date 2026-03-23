@@ -124,7 +124,7 @@ export default function CARFPage() {
   const result = getResult(answers);
 
   return (
-    <div style={{ padding: "40px", maxWidth: 680, width: "100%" }}>
+    <div className="tool-page" style={{ padding: "40px", maxWidth: 680, width: "100%" }}>
       <div style={{ borderLeft: "3px solid var(--red)", paddingLeft: 16, marginBottom: 32 }}>
         <h1
           style={{

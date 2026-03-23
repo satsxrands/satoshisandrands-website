@@ -71,7 +71,7 @@ export default function CGTPage() {
   };
 
   return (
-    <div style={{ padding: "40px", maxWidth: 720, width: "100%" }}>
+    <div className="tool-page" style={{ padding: "40px", maxWidth: 720, width: "100%" }}>
       <div style={{ borderLeft: "3px solid var(--gold)", paddingLeft: 16, marginBottom: 32 }}>
         <h1
           style={{
@@ -99,7 +99,7 @@ export default function CGTPage() {
           marginBottom: 24,
         }}
       >
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div className="input-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           {/* Asset */}
           <div>
             <label style={labelStyle}>Asset</label>

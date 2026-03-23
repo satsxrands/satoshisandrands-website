@@ -29,6 +29,7 @@ export default function Sidebar() {
 
   return (
     <aside
+      className="tax-sidebar"
       style={{
         width: "var(--sidebar-w)",
         flexShrink: 0,

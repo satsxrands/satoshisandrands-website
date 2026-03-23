@@ -22,6 +22,49 @@
 
 html { scroll-behavior: smooth; }
 
+/* ── Mobile overrides ──────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Homepage nav: hide links, keep logo only */
+  .nav-links { display: none !important; }
+  .nav-badge { display: none !important; }
+
+  /* Tax tools nav: hide tool links + badge */
+  .topnav-links { display: none !important; }
+  .topnav-badge { display: none !important; }
+
+  /* Tax tools sidebar: hide on mobile */
+  .tax-sidebar { display: none !important; }
+
+  /* Tool pages: reduce padding + max-width full */
+  .tool-page {
+    padding: 20px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* CGT input grid: single column */
+  .input-grid { grid-template-columns: 1fr !important; }
+
+  /* Hero: tighten padding */
+  .hero-section { padding: 60px 20px 48px !important; }
+
+  /* Eyebrow badge: shrink letter-spacing + font */
+  .eyebrow-badge {
+    font-size: 10px !important;
+    letter-spacing: 0.04em !important;
+    padding: 5px 12px !important;
+  }
+
+  /* Tool cards: single column */
+  .tools-grid { grid-template-columns: 1fr !important; }
+
+  /* Coming soon grid */
+  .upcoming-grid { grid-template-columns: 1fr !important; }
+
+  /* Footer */
+  .site-footer { padding: 20px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+}
+
 body {
   background: var(--bg);
   color: var(--white);

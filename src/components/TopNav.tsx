@@ -60,7 +60,7 @@ export default function TopNav() {
         </span>
       </Link>
 
-      <div style={{ display: "flex", gap: 4, alignItems: "center", flex: 1 }}>
+      <div className="topnav-links" style={{ display: "flex", gap: 4, alignItems: "center", flex: 1 }}>
         {tools.map((t) => {
           const active = pathname === t.href;
           return (
@@ -102,6 +102,7 @@ export default function TopNav() {
       </div>
 
       <span
+        className="topnav-badge"
         style={{
           fontFamily: "var(--font-nunito), sans-serif",
           fontSize: 11,

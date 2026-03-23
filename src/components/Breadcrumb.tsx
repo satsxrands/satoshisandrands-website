@@ -12,7 +12,8 @@ const toolNames: Record<string, string> = {
 export default function Breadcrumb() {
   const pathname = usePathname();
   const segment = pathname.split("/").pop() ?? "";
-  const toolName = toolNames[segment] ?? segment;
+  // On /tax-tools index, segment is "tax-tools" — show no child
+  const toolName = segment === "tax-tools" ? "" : (toolNames[segment] ?? segment);
 
   return (
     <div
@@ -40,7 +41,7 @@ export default function Breadcrumb() {
       </Link>
       <span style={{ color: "var(--muted)", fontSize: 12 }}>›</span>
       <Link
-        href="/tax-tools/cgt"
+        href="/tax-tools"
         style={{
           fontFamily: "var(--font-nunito), sans-serif",
           fontSize: 12,

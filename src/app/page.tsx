@@ -59,7 +59,7 @@ export default function Home() {
         </div>
         <div className="nav-links" style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <Link
-            href="/tax-tools/cgt"
+            href="/tax-tools"
             style={{
               fontFamily: "var(--font-nunito), sans-serif",
               fontSize: 13,

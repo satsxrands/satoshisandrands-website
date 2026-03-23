@@ -90,7 +90,7 @@ export default function Home() {
             Instagram
           </a>
           <a
-            href="https://x.com/satoshisandrands"
+            href="https://x.com/satsandrands"
             target="_blank"
             rel="noopener noreferrer"
             style={{

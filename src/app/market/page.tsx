@@ -121,7 +121,7 @@ export default function MarketPage() {
         </div>
       </nav>
 
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "48px 40px 80px" }}>
+      <div className="market-content" style={{ maxWidth: 960, margin: "0 auto", padding: "48px 40px 80px" }}>
 
         {/* Header */}
         <div style={{ marginBottom: 40 }}>
@@ -154,11 +154,11 @@ export default function MarketPage() {
 
         {data && (
           <>
-            {/* Global Stats Bar */}
+            {/* Global Stats Bar — 2×2 on mobile */}
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
                 gap: 1,
                 background: "var(--border)",
                 border: "1px solid var(--border)",
@@ -168,21 +168,21 @@ export default function MarketPage() {
               }}
             >
               {[
-                { label: "Total Market Cap", value: fmtZAR(data.global.totalMarketCap), sub: data.global.marketCapChange24h !== undefined ? <Pct value={data.global.marketCapChange24h} /> : null },
+                { label: "Total Mkt Cap", value: fmtZAR(data.global.totalMarketCap), sub: data.global.marketCapChange24h !== undefined ? <Pct value={data.global.marketCapChange24h} /> : null },
                 { label: "24h Volume", value: fmtZAR(data.global.volume24h), sub: null },
                 { label: "BTC Dominance", value: `${data.global.btcDominance.toFixed(1)}%`, sub: null },
                 { label: "Active Cryptos", value: data.global.activeCryptos.toLocaleString(), sub: null },
               ].map((stat) => (
-                <div key={stat.label} style={{ background: "var(--surface)", padding: "16px 20px" }}>
+                <div key={stat.label} style={{ background: "var(--surface)", padding: "14px 16px" }}>
                   <p style={label}>{stat.label}</p>
-                  <p style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 16, fontWeight: 700, color: "var(--white)", marginTop: 4 }}>{stat.value}</p>
+                  <p style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 15, fontWeight: 700, color: "var(--white)", marginTop: 4 }}>{stat.value}</p>
                   {stat.sub && <div style={{ marginTop: 2 }}>{stat.sub}</div>}
                 </div>
               ))}
             </div>
 
-            {/* Coin Cards */}
-            <div style={{ display: "grid", gap: 12 }}>
+            {/* Coin Cards — 2-col layout works on all screen sizes */}
+            <div style={{ display: "grid", gap: 10 }}>
               {data.coins.map((coin) => (
                 <div
                   key={coin.symbol}
@@ -191,49 +191,49 @@ export default function MarketPage() {
                     border: "1px solid var(--border)",
                     borderLeft: `3px solid ${COIN_COLORS[coin.symbol] ?? "var(--gold)"}`,
                     borderRadius: 12,
-                    padding: "20px 24px",
+                    padding: "16px 18px",
                     display: "grid",
-                    gridTemplateColumns: "auto 1fr auto auto",
+                    gridTemplateColumns: "auto 1fr",
                     alignItems: "center",
-                    gap: 20,
+                    gap: 14,
                   }}
                 >
                   {/* Icon */}
                   <div style={{
-                    width: 44, height: 44, borderRadius: "50%",
+                    width: 40, height: 40, borderRadius: "50%",
                     background: `${COIN_COLORS[coin.symbol]}18`,
                     border: `1px solid ${COIN_COLORS[coin.symbol]}33`,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 18, color: COIN_COLORS[coin.symbol],
+                    fontSize: 16, color: COIN_COLORS[coin.symbol],
                     fontWeight: 700, flexShrink: 0,
                   }}>
                     {COIN_ICONS[coin.symbol]}
                   </div>
 
-                  {/* Name */}
+                  {/* Content: name + price row, then changes row */}
                   <div>
-                    <p style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 20, letterSpacing: "0.05em", color: "var(--white)", lineHeight: 1 }}>{coin.symbol}</p>
-                    <p style={{ ...muted, marginTop: 2 }}>{coin.name}</p>
-                  </div>
-
-                  {/* Changes */}
-                  <div style={{ textAlign: "right" }}>
-                    <div style={{ display: "flex", gap: 16, justifyContent: "flex-end", marginBottom: 4 }}>
-                      <span style={muted}>24h</span>
-                      <Pct value={coin.change24h} />
+                    {/* Row 1: symbol/name + price */}
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+                      <div>
+                        <p style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 19, letterSpacing: "0.05em", color: "var(--white)", lineHeight: 1 }}>{coin.symbol}</p>
+                        <p style={{ ...muted, marginTop: 1, fontSize: 11 }}>{coin.name}</p>
+                      </div>
+                      <p style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 18, fontWeight: 700, color: "var(--white)", lineHeight: 1, whiteSpace: "nowrap" }}>
+                        {fmtPrice(coin.price)}
+                      </p>
                     </div>
-                    <div style={{ display: "flex", gap: 16, justifyContent: "flex-end" }}>
-                      <span style={muted}>7d</span>
-                      <Pct value={coin.change7d} />
+                    {/* Row 2: changes + volume */}
+                    <div style={{ display: "flex", gap: 14, marginTop: 6, alignItems: "center", flexWrap: "wrap" }}>
+                      <span style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                        <span style={{ ...muted, fontSize: 11 }}>24h</span>
+                        <Pct value={coin.change24h} />
+                      </span>
+                      <span style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                        <span style={{ ...muted, fontSize: 11 }}>7d</span>
+                        <Pct value={coin.change7d} />
+                      </span>
+                      <span style={{ ...muted, fontSize: 11, marginLeft: "auto" }}>Vol {fmtZAR(coin.volume24h)}</span>
                     </div>
-                  </div>
-
-                  {/* Price */}
-                  <div style={{ textAlign: "right", minWidth: 160 }}>
-                    <p style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 22, fontWeight: 700, color: "var(--white)", lineHeight: 1 }}>
-                      {fmtPrice(coin.price)}
-                    </p>
-                    <p style={{ ...muted, marginTop: 4 }}>Vol: {fmtZAR(coin.volume24h)}</p>
                   </div>
                 </div>
               ))}

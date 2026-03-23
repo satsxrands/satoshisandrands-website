@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const tools = [
   {
@@ -49,16 +50,12 @@ export default function Home() {
           justifyContent: "space-between",
         }}
       >
-        <span
-          style={{
-            fontFamily: "var(--font-bebas), sans-serif",
-            fontSize: 20,
-            color: "var(--gold)",
-            letterSpacing: "0.1em",
-          }}
-        >
-          SATOSHIS & RANDS
-        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <Image src="/satslogo.png" alt="SatoshisAndRands" width={32} height={32} style={{ borderRadius: "50%" }} priority />
+          <span style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 20, color: "var(--gold)", letterSpacing: "0.1em" }}>
+            SATOSHIS & RANDS
+          </span>
+        </div>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <Link
             href="/tax-tools/cgt"
@@ -116,6 +113,18 @@ export default function Home() {
           textAlign: "center",
         }}
       >
+        {/* Logo */}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 32 }}>
+          <Image
+            src="/satslogo.png"
+            alt="SatoshisAndRands"
+            width={120}
+            height={120}
+            style={{ borderRadius: "50%", boxShadow: "0 0 40px rgba(245,166,35,0.2)" }}
+            priority
+          />
+        </div>
+
         {/* Eyebrow */}
         <div
           style={{

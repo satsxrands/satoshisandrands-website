@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const tools = [
@@ -33,16 +34,30 @@ export default function TopNav() {
       <Link
         href="/"
         style={{
-          fontFamily: "var(--font-bebas), sans-serif",
-          fontSize: 18,
-          color: "var(--gold)",
-          letterSpacing: "0.1em",
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
           textDecoration: "none",
           whiteSpace: "nowrap",
           marginRight: 32,
         }}
       >
-        SATOSHIS & RANDS
+        <Image
+          src="/satslogo.png"
+          alt="SatoshisAndRands"
+          width={36}
+          height={36}
+          style={{ borderRadius: "50%" }}
+          priority
+        />
+        <span style={{
+          fontFamily: "var(--font-bebas), sans-serif",
+          fontSize: 18,
+          color: "var(--gold)",
+          letterSpacing: "0.1em",
+        }}>
+          SATOSHIS & RANDS
+        </span>
       </Link>
 
       <div style={{ display: "flex", gap: 4, alignItems: "center", flex: 1 }}>

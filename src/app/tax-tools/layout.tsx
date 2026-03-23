@@ -1,6 +1,7 @@
 import TopNav from "@/components/TopNav";
 import Sidebar from "@/components/Sidebar";
 import Breadcrumb from "@/components/Breadcrumb";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function TaxToolsLayout({
   children,
@@ -10,6 +11,7 @@ export default function TaxToolsLayout({
   return (
     <>
       <TopNav />
+      <MobileMenu />
       {/* Fixed app shell below the nav */}
       <div
         style={{

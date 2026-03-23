@@ -24,16 +24,21 @@ html { scroll-behavior: smooth; }
 
 /* ── Mobile overrides ──────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Homepage nav: hide links, keep logo only */
-  .nav-links { display: none !important; }
-  .nav-badge { display: none !important; }
+  /* Homepage nav: tighten padding, hide brand text (links stay) */
+  .home-nav { padding: 0 16px !important; }
+  .home-brand-text { display: none !important; }
+  /* Shrink nav link padding so all 3 links fit */
+  .nav-links a, .nav-links span { padding: 6px 8px !important; font-size: 12px !important; }
 
-  /* Tax tools nav: hide tool links + badge */
+  /* Tax tools nav: hide tool links + badge (burger menu handles it) */
   .topnav-links { display: none !important; }
   .topnav-badge { display: none !important; }
 
   /* Tax tools sidebar: hide on mobile */
   .tax-sidebar { display: none !important; }
+
+  /* Mobile menu button: only show on mobile */
+  .mobile-menu-btn { display: flex !important; }
 
   /* Tool pages: reduce padding + max-width full */
   .tool-page {
@@ -64,6 +69,9 @@ html { scroll-behavior: smooth; }
   /* Footer */
   .site-footer { padding: 20px !important; flex-direction: column !important; gap: 8px !important; text-align: center !important; }
 }
+
+/* Burger button hidden by default on desktop */
+.mobile-menu-btn { display: none !important; }
 
 body {
   background: var(--bg);

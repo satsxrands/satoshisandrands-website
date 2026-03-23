@@ -36,6 +36,7 @@ export default function Home() {
     <div style={{ background: "var(--bg)", minHeight: "100vh", color: "var(--white)" }}>
       {/* Top Nav */}
       <nav
+        className="home-nav"
         style={{
           position: "sticky",
           top: 0,
@@ -52,7 +53,7 @@ export default function Home() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <Image src="/satslogo.png" alt="SatoshisAndRands" width={32} height={32} style={{ borderRadius: "50%" }} priority />
-          <span style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 20, color: "var(--gold)", letterSpacing: "0.1em" }}>
+          <span className="home-brand-text" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 20, color: "var(--gold)", letterSpacing: "0.1em" }}>
             SATOSHIS & RANDS
           </span>
         </div>

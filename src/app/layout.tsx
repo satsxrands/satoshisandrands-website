@@ -27,10 +27,18 @@ export const metadata: Metadata = {
   title: "SatoshisAndRands — Crypto Tax Tools for Mzansi",
   description:
     "Free crypto tax tools for South Africans. CGT Calculator, Trader/Investor Classifier, and CARF Compliance Checker. No signup. No data stored.",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "SatoshisAndRands — Crypto Tax Tools for Mzansi",
     description: "Free crypto tax tools built for South Africa. SARS-compliant calculations.",
     siteName: "SatoshisAndRands",
+    images: [{ url: "/icon-512.png" }],
   },
 };
 

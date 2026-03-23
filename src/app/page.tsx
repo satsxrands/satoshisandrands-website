@@ -23,10 +23,16 @@ const tools = [
     title: "CARF Checker",
     desc: "Check your CARF compliance risk. SA exchanges report to SARS — find out where you stand.",
   },
+  {
+    href: "/market",
+    icon: "📈",
+    color: "#627EEA",
+    title: "Live Market Data",
+    desc: "BTC/ZAR, ETH/ZAR, SOL, XRP, BNB — live prices refreshed every 60 seconds via CoinMarketCap.",
+  },
 ];
 
 const upcoming = [
-  { icon: "📈", label: "Live Market Data", desc: "BTC/ZAR, ETH/ZAR, top movers — real time" },
   { icon: "📰", label: "SA Crypto News", desc: "Curated news for South African investors" },
   { icon: "🎓", label: "Education Hub", desc: "Crypto 101, SARS guides, beginner to advanced" },
 ];
@@ -70,6 +76,19 @@ export default function Home() {
             }}
           >
             Tax Tools
+          </Link>
+          <Link
+            href="/market"
+            style={{
+              fontFamily: "var(--font-nunito), sans-serif",
+              fontSize: 13,
+              fontWeight: 800,
+              color: "var(--muted)",
+              textDecoration: "none",
+              padding: "6px 16px",
+            }}
+          >
+            Market
           </Link>
           <span style={{ color: "var(--border)" }}>|</span>
           <a
@@ -286,7 +305,7 @@ export default function Home() {
               color: "var(--white)",
             }}
           >
-            CRYPTO TAX TOOLS
+            TOOLS & MARKET DATA
           </h2>
         </div>
 

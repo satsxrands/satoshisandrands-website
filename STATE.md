@@ -1,56 +1,59 @@
 # SatoshisAndRands — Session Checkpoint
-**Date:** 2026-03-24
+**Date:** 2026-03-24 (end of session)
 
 ---
 
 ## Completed This Session
 
-### Social Links
-- [x] Added Facebook profile to nav and hero CTA buttons
-  - URL: `https://www.facebook.com/profile.php?id=61578408320588`
-- [x] Renamed Instagram hero button to "Follow on Instagram" for clarity
+### Mobile Nav Fixes
+- [x] Social links (Instagram, X, Facebook) wrapped in single `nav-social` div — hidden on mobile
+- [x] Guides + News also hidden on mobile nav (`nav-secondary`) — prevents overflow
+- [x] Mobile nav shows only: **Tax Tools | Market**
+- [x] News cards changed from full `<a>` wrapper → non-clickable `div` + explicit "Read article →" button (stops accidental tap popups)
 
-### Blog / Guides (`/blog`)
-- [x] 4 SEO articles created (static TypeScript data, no CMS):
-  - CARF South Africa Explained
-  - How to Declare Crypto on ITR12
-  - Investor vs Trader — SARS
-  - Crypto CGT Calculator SA
-- [x] Category filter pills (client component `BlogFilter.tsx`) — All / CARF / CGT / Filing / Tax Basics
-- [x] Article count per category badge
-- [x] "Guides" added to homepage nav and all page navs
-- [x] Article body styles in globals.css (headings, tables, lists, links)
+### Blog — Category Filters
+- [x] `BlogFilter.tsx` client component — filter pills (All / CARF / CGT / Filing / Tax Basics) with article count
+- [x] Blog index page updated to use `BlogFilter`
 
 ### News Page (`/news`)
-- [x] `/api/news` route — fetches 4 RSS feeds (CoinTelegraph SA, CoinDesk, CT Regulation, CT Bitcoin)
-- [x] 15-min server-side cache (`next: { revalidate: 900 }`)
-- [x] finbert sentiment analysis via public HF Inference API (`ProsusAI/finbert`)
-  - Batched: all 30 headlines in one API call
-  - No HF token used — public endpoint only
-  - Graceful fallback to neutral if finbert unavailable
-  - Badge on each card: ▲ Bullish / ▼ Bearish / ● Neutral + confidence %
+- [x] Live RSS feed from 4 sources (CoinTelegraph SA, CoinDesk, CT Regulation, CT Bitcoin)
+- [x] finbert sentiment analysis via public HF Inference API (`ProsusAI/finbert`) — no token
+- [x] Sentiment badge per card: ▲ Bullish / ▼ Bearish / ● Neutral + confidence %
 - [x] Category filter: All / SA / BTC / Regulation / Market
-- [x] "News" added to homepage nav
+
+### Vercel Analytics
+- [x] `@vercel/analytics` installed + `<Analytics />` added to root layout
+- [x] Live on satoshisandrands.com — enable in Vercel dashboard → Analytics tab
+
+### Google Search Console
+- [x] Verification tag for `satoshisandrands.com` added to layout metadata
+- [x] Verification tag for `satoshisandrands.co.za` added to layout metadata
+- [x] Both properties verified in Search Console ✓
+- [x] `sitemap.ts` created — `/sitemap.xml` live with all 13 URLs + priorities
+
+### .co.za Domain
+- [x] `vercel.json` created — permanent 301 redirect `.co.za → .com` for all paths
+- [x] Both domains live and verified
 
 ### Growth Planning
-- [x] `growth-plan-2026.md` — 90-day goals, platform strategy, content pillars, partnerships, ad budget
-- [x] `weekly-post-rhythm.md` — daily schedule by platform, hashtag stacks, monthly anchors
+- [x] `growth-plan-2026.md` — 90-day goals, platform strategy, SA personality clip series
+- [x] `weekly-post-rhythm.md` — daily schedule, hashtag stacks, monthly anchors
 - [x] `content-calendar-q2-2026.md` — week-by-week April–June 2026
-- [x] SA Personality Clip Series added to growth plan (Stafford Masie, Ran Neu-Ner, Simon Dingle)
-
-### Deployment
-- [x] All changes live at `satoshisandrands.com`
 
 ---
 
 ## Pending Tasks
 
-- [ ] **MOBILE BUG:** Nav overflow on mobile — social links (Instagram, X, Facebook) push off screen after adding News/Guides. Fix: hide social links from nav on mobile (they're in hero CTAs already)
-- [ ] Queue all 7 X/Twitter threads to Buffer (channel: `69bfba13af47dacb6942111f`)
+- [ ] **Enable Vercel Analytics** in dashboard: vercel.com → satoshisandrands → Analytics → Enable
+- [ ] **Submit sitemap** in Search Console for both .com and .co.za: `satoshisandrands.com/sitemap.xml`
+- [ ] **Request indexing** for 5 blog URLs in Search Console
+- [ ] Queue 7 X/Twitter threads to Buffer (channel: `69bfba13af47dacb6942111f`)
 - [ ] Upload 4 TikTok MP4s to Buffer TikTok channel (`69bfbdc6af47dacb6942196c`)
 - [ ] `/learn` education hub — mockup + go live ~21 June 2026 (week before tax season)
+- [ ] Tax tool icons — replace emoji (📊 ⚖️ 🔍) with custom brand SVGs
 - [ ] SA Personality Clip Series — source Stafford Masie / Ran Neu-Ner clips
 - [ ] Add more blog articles (target 8–10 before tax season)
+- [ ] Add Guides + News to mobile nav (burger menu on homepage)
 
 ---
 
@@ -62,18 +65,29 @@
 
 ---
 
+## Analytics & Tracking
+| Tool | Status | Access |
+|------|--------|--------|
+| Vercel Analytics | Installed, needs enabling | vercel.com → satoshisandrands → Analytics |
+| Google Search Console .com | ✅ Verified | search.google.com/search-console |
+| Google Search Console .co.za | ✅ Verified | search.google.com/search-console |
+
+---
+
 ## Resume Commands
 
 ```bash
-# Next.js dev
+# Dev server
 cd /Users/base/SatsxRands/website && npm run dev
 
-# Deploy to prod
+# Deploy
 cd /Users/base/SatsxRands/website && vercel deploy --prod
 
-# Fix mobile nav (first task next session)
-# Hide .nav-social class on mobile in globals.css
-# Add className="nav-social" to Instagram/X/Facebook links + adjacent separators in page.tsx
+# Next tasks
+# 1. Enable Vercel Analytics in dashboard
+# 2. Submit sitemap in both Search Console properties
+# 3. /learn education hub mockup
+# 4. Tax tool custom SVG icons
 ```
 
 ---
@@ -82,16 +96,16 @@ cd /Users/base/SatsxRands/website && vercel deploy --prod
 
 | File | Purpose |
 |------|---------|
-| `src/app/globals.css` | Mobile overrides + article body styles |
-| `src/components/BlogFilter.tsx` | Client-side category filter for blog |
-| `src/components/MobileMenu.tsx` | Floating burger nav for tax tools |
-| `src/content/blog/articles.ts` | All blog article data |
-| `src/app/blog/page.tsx` | Blog index |
+| `src/app/layout.tsx` | Root layout — Analytics, verification tags, fonts |
+| `src/app/sitemap.ts` | Auto-generated sitemap (13 URLs) |
+| `vercel.json` | .co.za → .com 301 redirect |
+| `src/app/globals.css` | Mobile overrides, article body styles |
+| `src/components/BlogFilter.tsx` | Client-side category filter |
+| `src/content/blog/articles.ts` | All 4 blog articles |
 | `src/app/blog/[slug]/page.tsx` | Individual article pages |
-| `src/app/news/page.tsx` | News page with sentiment badges |
-| `src/app/api/news/route.ts` | RSS fetch + finbert sentiment API |
+| `src/app/news/page.tsx` | News feed with sentiment badges |
+| `src/app/api/news/route.ts` | RSS + finbert sentiment API |
 | `src/app/api/market/route.ts` | CoinMarketCap proxy |
-| `src/app/market/page.tsx` | Live market data page |
 | `public/og-image.png` | 1200×630 OG image |
 | `notes/growth-plan-2026.md` | Full growth strategy |
 | `notes/weekly-post-rhythm.md` | Daily posting schedule |

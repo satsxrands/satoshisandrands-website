@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Space_Mono, Nunito } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -27,6 +28,9 @@ export const metadata: Metadata = {
   title: "SatoshisAndRands — Crypto Tax Tools for Mzansi",
   description:
     "Free crypto tax tools for South Africans. CGT Calculator, Trader/Investor Classifier, and CARF Compliance Checker. No signup. No data stored.",
+  verification: {
+    google: ["rSTYP9L4akRvzOI6WUdvakZBDKsWgQzDoPubCvO1mAI", "O3a_kNCetXDok92Nv5rCnh9AenNI4fsewB8d_fDd5hU"],
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -65,7 +69,10 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${spaceMono.variable} ${nunito.variable} h-full`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

@@ -27,8 +27,9 @@ html { scroll-behavior: smooth; }
 
 /* ── Mobile overrides ──────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Hide social links from nav on mobile — they're in the hero CTAs */
+  /* Hide social links + secondary nav items on mobile */
   .nav-social { display: none !important; }
+  .nav-secondary { display: none !important; }
 
   /* Homepage nav: tighten padding, hide brand text (links stay) */
   .home-nav { padding: 0 16px !important; }

@@ -167,19 +167,14 @@ export default function NewsPage() {
             {filtered.map((item, i) => {
               const color = CATEGORY_COLORS[item.category] ?? "var(--gold)";
               return (
-                <a
+                <div
                   key={i}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   style={{
-                    display: "block",
                     background: "var(--card)",
                     border: "1px solid var(--border)",
                     borderLeft: `3px solid ${color}`,
                     borderRadius: 12,
                     padding: "16px 20px",
-                    textDecoration: "none",
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
@@ -205,11 +200,19 @@ export default function NewsPage() {
                     {item.title}
                   </p>
                   {item.excerpt && (
-                    <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 600, color: "var(--muted)", lineHeight: 1.5 }}>
+                    <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 600, color: "var(--muted)", lineHeight: 1.5, marginBottom: 12 }}>
                       {item.excerpt}
                     </p>
                   )}
-                </a>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 900, color, letterSpacing: "0.04em", textDecoration: "none" }}
+                  >
+                    Read article →
+                  </a>
+                </div>
               );
             })}
 

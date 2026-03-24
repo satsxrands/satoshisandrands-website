@@ -90,63 +90,20 @@ export default function Home() {
           >
             Market
           </Link>
-          <span style={{ color: "var(--border)" }}>|</span>
-          <Link href="/blog" style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 800, color: "var(--muted)", textDecoration: "none", padding: "6px 16px" }}>
+          <span className="nav-secondary" style={{ color: "var(--border)" }}>|</span>
+          <Link className="nav-secondary" href="/blog" style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 800, color: "var(--muted)", textDecoration: "none", padding: "6px 16px" }}>
             Guides
           </Link>
-          <span style={{ color: "var(--border)" }}>|</span>
-          <Link href="/news" style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 800, color: "var(--muted)", textDecoration: "none", padding: "6px 16px" }}>
+          <span className="nav-secondary" style={{ color: "var(--border)" }}>|</span>
+          <Link className="nav-secondary" href="/news" style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 800, color: "var(--muted)", textDecoration: "none", padding: "6px 16px" }}>
             News
           </Link>
-          <span className="nav-social" style={{ color: "var(--border)" }}>|</span>
-          <a
-            className="nav-social"
-            href="https://instagram.com/satoshisandrands"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 13,
-              fontWeight: 800,
-              color: "var(--muted)",
-              textDecoration: "none",
-              padding: "6px 16px",
-            }}
-          >
-            Instagram
-          </a>
-          <a
-            className="nav-social"
-            href="https://x.com/satsandrands"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 13,
-              fontWeight: 800,
-              color: "var(--muted)",
-              textDecoration: "none",
-              padding: "6px 16px",
-            }}
-          >
-            X
-          </a>
-          <a
-            className="nav-social"
-            href="https://www.facebook.com/profile.php?id=61578408320588"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 13,
-              fontWeight: 800,
-              color: "var(--muted)",
-              textDecoration: "none",
-              padding: "6px 16px",
-            }}
-          >
-            Facebook
-          </a>
+          <div className="nav-social" style={{ display: "flex", alignItems: "center", gap: 0 }}>
+            <span style={{ color: "var(--border)" }}>|</span>
+            <a href="https://instagram.com/satoshisandrands" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 800, color: "var(--muted)", textDecoration: "none", padding: "6px 16px" }}>Instagram</a>
+            <a href="https://x.com/satsandrands" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 800, color: "var(--muted)", textDecoration: "none", padding: "6px 16px" }}>X</a>
+            <a href="https://www.facebook.com/profile.php?id=61578408320588" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 800, color: "var(--muted)", textDecoration: "none", padding: "6px 16px" }}>Facebook</a>
+          </div>
         </div>
       </nav>
 

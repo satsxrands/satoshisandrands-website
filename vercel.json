@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "satoshisandrands.co.za" }],
+      "destination": "https://satoshisandrands.com/$1",
+      "permanent": true
+    }
+  ]
+}

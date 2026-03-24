@@ -54,6 +54,8 @@
 - [ ] SA Personality Clip Series — source Stafford Masie / Ran Neu-Ner clips
 - [ ] Add more blog articles (target 8–10 before tax season)
 - [ ] Add Guides + News to mobile nav (burger menu on homepage)
+- [ ] **Security audit** (registry #035) — API key exposure, rate limiting, CSP headers, npm audit, Vercel/Buffer access controls, env var rotation
+  - Scope: CMC key, HF public endpoint throttling, Buffer API key, CSP headers, `npm audit`, Vercel deploy access
 
 ---
 

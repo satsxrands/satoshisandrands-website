@@ -5,6 +5,13 @@
 
 ## Completed This Session
 
+### Social Links
+- [x] Added Facebook profile to nav (after X link)
+- [x] Added "Follow on Facebook" CTA button in hero (alongside Instagram)
+  - URL: `https://www.facebook.com/profile.php?id=61578408320588`
+- [x] Renamed "Follow @SatoshisAndRands" → "Follow on Instagram" for clarity
+- [x] Deployed to satoshisandrands.com ✓
+
 ### Mobile Responsiveness
 - [x] Fixed nav overflow on mobile homepage — hides brand text, keeps Tax Tools / Instagram / X links
 - [x] Tax tools pages fully mobile-friendly (`tool-page`, `input-grid` single-column)

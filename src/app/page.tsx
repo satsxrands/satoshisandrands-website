@@ -121,6 +121,21 @@ export default function Home() {
           >
             X
           </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578408320588"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "var(--font-nunito), sans-serif",
+              fontSize: 13,
+              fontWeight: 800,
+              color: "var(--muted)",
+              textDecoration: "none",
+              padding: "6px 16px",
+            }}
+          >
+            Facebook
+          </a>
         </div>
       </nav>
 
@@ -241,7 +256,28 @@ export default function Home() {
               border: "1px solid var(--border)",
             }}
           >
-            Follow @SatoshisAndRands
+            Follow on Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578408320588"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "transparent",
+              color: "var(--white)",
+              fontFamily: "var(--font-nunito), sans-serif",
+              fontSize: 14,
+              fontWeight: 900,
+              padding: "14px 28px",
+              borderRadius: 10,
+              textDecoration: "none",
+              border: "1px solid var(--border)",
+            }}
+          >
+            Follow on Facebook
           </a>
         </div>
 

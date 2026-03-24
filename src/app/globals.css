@@ -27,6 +27,9 @@ html { scroll-behavior: smooth; }
 
 /* ── Mobile overrides ──────────────────────────────────── */
 @media (max-width: 640px) {
+  /* Hide social links from nav on mobile — they're in the hero CTAs */
+  .nav-social { display: none !important; }
+
   /* Homepage nav: tighten padding, hide brand text (links stay) */
   .home-nav { padding: 0 16px !important; }
   .home-brand-text { display: none !important; }
@@ -85,3 +88,18 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
+
+/* ── Article body styles ──────────────────────────────── */
+.article-body { font-family: var(--font-nunito), sans-serif; font-size: 15px; font-weight: 600; color: #C8C0B0; line-height: 1.8; }
+.article-body p { margin-bottom: 20px; }
+.article-body h2 { font-family: var(--font-bebas), sans-serif; font-size: 24px; letter-spacing: 0.04em; color: var(--white); margin: 36px 0 14px; }
+.article-body h3 { font-family: var(--font-bebas), sans-serif; font-size: 19px; letter-spacing: 0.04em; color: var(--white); margin: 28px 0 10px; }
+.article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+.article-body li { margin-bottom: 8px; }
+.article-body strong { color: var(--white); font-weight: 900; }
+.article-body a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover { color: var(--white); }
+.article-body table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-family: var(--font-space-mono), monospace; font-size: 13px; }
+.article-body th { background: var(--surface); color: var(--muted); font-weight: 700; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-family: var(--font-nunito), sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.article-body td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--white); }
+.article-body tr:last-child td { border-bottom: none; }

@@ -6,54 +6,51 @@
 ## Completed This Session
 
 ### Social Links
-- [x] Added Facebook profile to nav (after X link)
-- [x] Added "Follow on Facebook" CTA button in hero (alongside Instagram)
+- [x] Added Facebook profile to nav and hero CTA buttons
   - URL: `https://www.facebook.com/profile.php?id=61578408320588`
-- [x] Renamed "Follow @SatoshisAndRands" → "Follow on Instagram" for clarity
-- [x] Deployed to satoshisandrands.com ✓
+- [x] Renamed Instagram hero button to "Follow on Instagram" for clarity
 
-### Mobile Responsiveness
-- [x] Fixed nav overflow on mobile homepage — hides brand text, keeps Tax Tools / Instagram / X links
-- [x] Tax tools pages fully mobile-friendly (`tool-page`, `input-grid` single-column)
-- [x] Fixed burger menu CSS cascade bug (`.mobile-menu-btn` rule ordering)
-- [x] Floating burger menu (`MobileMenu.tsx`) on all tax tool pages — slide-up drawer
-- [x] Fixed "Tax Tools" breadcrumb link (was dead on CGT page) → now points to `/tax-tools`
-- [x] `tax-tools/page.tsx` replaced redirect with proper tool selector page
+### Blog / Guides (`/blog`)
+- [x] 4 SEO articles created (static TypeScript data, no CMS):
+  - CARF South Africa Explained
+  - How to Declare Crypto on ITR12
+  - Investor vs Trader — SARS
+  - Crypto CGT Calculator SA
+- [x] Category filter pills (client component `BlogFilter.tsx`) — All / CARF / CGT / Filing / Tax Basics
+- [x] Article count per category badge
+- [x] "Guides" added to homepage nav and all page navs
+- [x] Article body styles in globals.css (headings, tables, lists, links)
 
-### Market Data Page (`/market`)
-- [x] Built `/api/market/route.ts` — CoinMarketCap proxy (BTC/ETH/SOL/XRP/BNB in ZAR)
-- [x] Built `/market/page.tsx` — live prices, 60s auto-refresh, countdown timer
-- [x] Fixed mobile horizontal scroll — restructured coin cards to `auto 1fr` grid
-- [x] Created `/market/layout.tsx` for metadata (client component workaround)
+### News Page (`/news`)
+- [x] `/api/news` route — fetches 4 RSS feeds (CoinTelegraph SA, CoinDesk, CT Regulation, CT Bitcoin)
+- [x] 15-min server-side cache (`next: { revalidate: 900 }`)
+- [x] finbert sentiment analysis via public HF Inference API (`ProsusAI/finbert`)
+  - Batched: all 30 headlines in one API call
+  - No HF token used — public endpoint only
+  - Graceful fallback to neutral if finbert unavailable
+  - Badge on each card: ▲ Bullish / ▼ Bearish / ● Neutral + confidence %
+- [x] Category filter: All / SA / BTC / Regulation / Market
+- [x] "News" added to homepage nav
 
-### OG Image
-- [x] Built `/tmp/og-image.html` — 1200×630, branded design
-- [x] Rendered to `public/og-image.png` via headless Chromium
-- [x] Updated `layout.tsx` with proper `openGraph` + `twitter` card metadata
-- [x] Added metadata to `tax-tools/page.tsx` and `market/layout.tsx`
-
-### Campaign Content
-- [x] 7-day launch campaign copy written (Instagram + X threads + TikTok captions)
-  - File: `/Users/base/SatsxRands/agents/output/campaign_launch_2026-03-23/x_tiktok_content.md`
-- [x] 4 TikTok MP4 videos rendered (1080×1920, H.264, 25fps, ~7.5–8s each)
-  - Dir: `/Users/base/SatsxRands/agents/output/tiktok_videos_2026-03-23/mp4/`
-  - `day1_launch.mp4`, `day2_carf.mp4`, `day4_cgt.mp4`, `day7_checklist.mp4`
+### Growth Planning
+- [x] `growth-plan-2026.md` — 90-day goals, platform strategy, content pillars, partnerships, ad budget
+- [x] `weekly-post-rhythm.md` — daily schedule by platform, hashtag stacks, monthly anchors
+- [x] `content-calendar-q2-2026.md` — week-by-week April–June 2026
+- [x] SA Personality Clip Series added to growth plan (Stafford Masie, Ran Neu-Ner, Simon Dingle)
 
 ### Deployment
-- [x] Deployed to `satoshisandrands.com` via `vercel --prod`
-- [x] CMC API key added as Vercel env var (`CMC_API_KEY`)
+- [x] All changes live at `satoshisandrands.com`
 
 ---
 
 ## Pending Tasks
 
-- [ ] Queue all 7 X/Twitter threads to Buffer
-  - Channel ID: `69bfba13af47dacb6942111f`
-  - Content: `x_tiktok_content.md`
+- [ ] **MOBILE BUG:** Nav overflow on mobile — social links (Instagram, X, Facebook) push off screen after adding News/Guides. Fix: hide social links from nav on mobile (they're in hero CTAs already)
+- [ ] Queue all 7 X/Twitter threads to Buffer (channel: `69bfba13af47dacb6942111f`)
 - [ ] Upload 4 TikTok MP4s to Buffer TikTok channel (`69bfbdc6af47dacb6942196c`)
-- [ ] Days 3, 5, 6: post square card PNGs to TikTok with captions
-- [ ] Tax tools mobile polish — larger tap targets on small screens
-- [ ] SA Crypto News page (currently "coming soon")
+- [ ] `/learn` education hub — mockup + go live ~21 June 2026 (week before tax season)
+- [ ] SA Personality Clip Series — source Stafford Masie / Ran Neu-Ner clips
+- [ ] Add more blog articles (target 8–10 before tax season)
 
 ---
 
@@ -72,14 +69,11 @@
 cd /Users/base/SatsxRands/website && npm run dev
 
 # Deploy to prod
-cd /Users/base/SatsxRands/website && vercel --prod --yes
+cd /Users/base/SatsxRands/website && vercel deploy --prod
 
-# Re-render OG image
-cd /tmp && python3 render_og.py  # (headless Chromium from og-image.html)
-
-# Queue X threads to Buffer (next task)
-# Buffer X channel: 69bfba13af47dacb6942111f
-# Content: /Users/base/SatsxRands/agents/output/campaign_launch_2026-03-23/x_tiktok_content.md
+# Fix mobile nav (first task next session)
+# Hide .nav-social class on mobile in globals.css
+# Add className="nav-social" to Instagram/X/Facebook links + adjacent separators in page.tsx
 ```
 
 ---
@@ -88,12 +82,17 @@ cd /tmp && python3 render_og.py  # (headless Chromium from og-image.html)
 
 | File | Purpose |
 |------|---------|
-| `src/app/globals.css` | Mobile overrides (`@media max-width: 640px`) |
+| `src/app/globals.css` | Mobile overrides + article body styles |
+| `src/components/BlogFilter.tsx` | Client-side category filter for blog |
 | `src/components/MobileMenu.tsx` | Floating burger nav for tax tools |
-| `src/components/Breadcrumb.tsx` | Breadcrumb with fixed `/tax-tools` link |
-| `src/app/api/market/route.ts` | CMC API proxy — server-side |
+| `src/content/blog/articles.ts` | All blog article data |
+| `src/app/blog/page.tsx` | Blog index |
+| `src/app/blog/[slug]/page.tsx` | Individual article pages |
+| `src/app/news/page.tsx` | News page with sentiment badges |
+| `src/app/api/news/route.ts` | RSS fetch + finbert sentiment API |
+| `src/app/api/market/route.ts` | CoinMarketCap proxy |
 | `src/app/market/page.tsx` | Live market data page |
-| `src/app/market/layout.tsx` | Market page metadata |
-| `src/app/tax-tools/page.tsx` | Tool selector index page |
-| `public/og-image.png` | 1200×630 OG image for social sharing |
-| `/tmp/og-image.html` | Source HTML for OG image re-render |
+| `public/og-image.png` | 1200×630 OG image |
+| `notes/growth-plan-2026.md` | Full growth strategy |
+| `notes/weekly-post-rhythm.md` | Daily posting schedule |
+| `notes/content-calendar-q2-2026.md` | April–June content calendar |

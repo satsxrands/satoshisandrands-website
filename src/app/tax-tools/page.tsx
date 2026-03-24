@@ -89,3 +89,10 @@ export default function TaxToolsIndex() {
     </div>
   );
 }
+
+export const metadata = {
+  title: "Tax Tools — SatoshisAndRands",
+  description: "Free South African crypto tax tools. CGT Calculator, Trader vs Investor Classifier, CARF Compliance Checker. SARS 2026/27 brackets.",
+  openGraph: { title: "SA Crypto Tax Tools — Free, No Signup", images: [{ url: "/og-image.png", width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", images: ["/og-image.png"] },
+};

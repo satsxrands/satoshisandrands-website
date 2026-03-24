@@ -261,3 +261,5 @@ export default function MarketPage() {
     </div>
   );
 }
+
+// Page-level OG metadata handled via layout — market page is a client component

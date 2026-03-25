@@ -66,7 +66,9 @@ export default function MobileMenu() {
             marginBottom: 8,
           }}
         >
-          <span style={{ fontSize: 18 }}>🏠</span>
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4,14 L16,4 L28,14 L28,28 L20,28 L20,20 L12,20 L12,28 L4,28 Z" fill="#888" fillOpacity="0.15" stroke="#888" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round"/>
+            </svg>
           <span
             style={{
               fontFamily: "var(--font-nunito), sans-serif",

@@ -1,9 +1,19 @@
 import { NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "@/lib/rateLimit";
 
 const CMC_KEY = process.env.CMC_API_KEY;
 const SYMBOLS = "BTC,ETH,SOL,XRP,BNB";
 
-export async function GET() {
+export async function GET(request: Request) {
+  const ip = getClientIp(request);
+  const { allowed, resetAt } = rateLimit(ip, 10, 60_000); // 10 req/min per IP
+  if (!allowed) {
+    return NextResponse.json(
+      { error: "Too many requests" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((resetAt - Date.now()) / 1000)) } }
+    );
+  }
+
   try {
     const [quotesRes, globalRes] = await Promise.all([
       fetch(

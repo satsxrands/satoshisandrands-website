@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "@/lib/rateLimit";
 
 export interface NewsItem {
   title: string;
@@ -86,7 +87,16 @@ async function getSentiments(titles: string[]): Promise<Array<{ sentiment: NewsI
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const ip = getClientIp(request);
+  const { allowed, resetAt } = rateLimit(ip, 4, 60_000); // 4 req/min per IP (data revalidates every 15 min)
+  if (!allowed) {
+    return NextResponse.json(
+      { error: "Too many requests" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((resetAt - Date.now()) / 1000)) } }
+    );
+  }
+
   try {
     // 1. Fetch all RSS feeds in parallel
     const feedResults = await Promise.allSettled(

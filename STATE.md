@@ -5,71 +5,80 @@
 
 ## Completed This Session
 
-### Homepage + Burger Menu Fixes (2026-03-25)
-- [x] News removed from "coming soon" — added as live green card in tools grid
-- [x] Education Hub is now the only remaining "coming soon" item
-- [x] Burger menu: switched from `bottom: -320px` to `transform: translateY(110%)` — always fully clears regardless of drawer height
-- [x] Added `pointerEvents: none` when drawer closed — no accidental tap blocking
-- [x] Tool pages: `padding-bottom: 96px` on mobile so burger button never covers disclaimer
+### Homepage + Burger Menu Fixes
+- [x] News moved from "coming soon" to live tools grid
+- [x] Education Hub only remaining "coming soon" item
+- [x] Burger menu: `transform: translateY(110%)` + `pointerEvents: none` fix
+- [x] Tool pages: `padding-bottom: 96px` so burger never covers disclaimer
 
 ### Mobile Nav Fixes
-- [x] Social links (Instagram, X, Facebook) wrapped in single `nav-social` div — hidden on mobile
-- [x] Guides + News also hidden on mobile nav (`nav-secondary`) — prevents overflow
-- [x] Mobile nav shows only: **Tax Tools | Market**
-- [x] News cards changed from full `<a>` wrapper → non-clickable `div` + explicit "Read article →" button (stops accidental tap popups)
+- [x] Social links wrapped in single `nav-social` div — hidden on mobile
+- [x] Guides + News hidden on mobile (`nav-secondary`)
+- [x] News cards: `<div>` + explicit link (stops accidental popup navigation)
 
-### Blog — Category Filters
-- [x] `BlogFilter.tsx` client component — filter pills (All / CARF / CGT / Filing / Tax Basics) with article count
-- [x] Blog index page updated to use `BlogFilter`
+### Blog
+- [x] `BlogFilter.tsx` — filter pills with article counts
+- [x] 4 SEO articles live at `/blog/[slug]`
 
 ### News Page (`/news`)
-- [x] Live RSS feed from 4 sources (CoinTelegraph SA, CoinDesk, CT Regulation, CT Bitcoin)
-- [x] finbert sentiment analysis via public HF Inference API (`ProsusAI/finbert`) — no token
-- [x] Sentiment badge per card: ▲ Bullish / ▼ Bearish / ● Neutral + confidence %
-- [x] Category filter: All / SA / BTC / Regulation / Market
+- [x] Live RSS from 4 sources + finbert sentiment (public HF, no token)
+- [x] Sentiment badges: ▲ Bullish / ▼ Bearish / ● Neutral + confidence %
+- [x] Category filters: All / SA / BTC / Regulation / Market
 
-### Vercel Analytics
-- [x] `@vercel/analytics` installed + `<Analytics />` added to root layout
-- [x] Live on satoshisandrands.com — enable in Vercel dashboard → Analytics tab
-
-### Google Search Console
-- [x] Verification tag for `satoshisandrands.com` added to layout metadata
-- [x] Verification tag for `satoshisandrands.co.za` added to layout metadata
-- [x] Both properties verified in Search Console ✓
-- [x] `sitemap.ts` created — `/sitemap.xml` live with all 13 URLs + priorities
-
-### .co.za Domain
-- [x] `vercel.json` created — permanent 301 redirect `.co.za → .com` for all paths
-- [x] Both domains live and verified
+### Vercel Analytics + Search Console
+- [x] `@vercel/analytics` installed + `<Analytics />` in root layout
+- [x] Both .com + .co.za verified in Google Search Console
+- [x] `sitemap.ts` — `/sitemap.xml` live (13 URLs)
+- [x] `vercel.json` — permanent 301 .co.za → .com redirect
 
 ### Growth Planning
-- [x] `growth-plan-2026.md` — 90-day goals, platform strategy, SA personality clip series
-- [x] `weekly-post-rhythm.md` — daily schedule, hashtag stacks, monthly anchors
+- [x] `growth-plan-2026.md` — 90-day goals, SA personality clip series
+- [x] `weekly-post-rhythm.md` — daily schedule + hashtag stacks
 - [x] `content-calendar-q2-2026.md` — week-by-week April–June 2026
 
 ### Education Hub Mockup
-- [x] `/tmp/sxr_learn_mockup.html` — fully interactive mockup built
-- [x] SVG icons replacing all emoji (14 lessons across 5 sections)
-- [x] Filter pills, lesson expand/collapse, sequential unlock, progress bar (localStorage)
-- [x] Tool CTAs per lesson linking to CGT Calculator, Classifier, CARF Checker
-- [x] User reviewed — approved structure, pending more testing
+- [x] `/tmp/sxr_learn_mockup.html` — fully interactive (SVG icons, 14 lessons, 5 sections)
+- [x] Filter pills, expand/collapse, sequential unlock, localStorage progress bar
+- [x] User reviewed and approved structure
+
+### Brand SVG Icon System
+- [x] `TaxToolIcons.tsx` — CgtIcon, ClassifierIcon, CarfIcon
+- [x] `CoinIcons.tsx` — BtcIcon, EthIcon, SolIcon, XrpIcon, BnbIcon
+- [x] All emoji replaced across: homepage, Sidebar, MobileMenu (incl. home icon), tax-tools index, classifier results, education hub upcoming card, market page
+- [x] XRP iterated to Variant B (dual S-curves + centre dot)
+- [x] BNB revised to 5-diamond cross matching actual Binance mark
+
+### Monetisation Plan
+- [x] Registry #037 logged — target live before Oct 2026 tax season deadline
+- [x] `notes/2026-03-25-monetisation.md` — 4 streams ranked by effort/return
+- [x] Priority order: affiliates (May) → practitioner referrals (Jun) → PDF report (Jul)
+
+### November 2026 App Milestone
+- [x] Registry #036 logged
+- [x] `notes/2026-03-25-app-nov-milestone.md` — scoping questions, rough timeline
+
+### Deployments
+- [x] All changes deployed to `satoshisandrands.com` — 18 routes live
 
 ---
 
 ## Pending Tasks
 
-- [ ] **Enable Vercel Analytics** in dashboard: vercel.com → satoshisandrands → Analytics → Enable
-- [ ] **Submit sitemap** in Search Console for both .com and .co.za: `satoshisandrands.com/sitemap.xml`
+- [ ] **Enable Vercel Analytics** — vercel.com → satoshisandrands → Analytics → Enable
+- [ ] **Submit sitemap** in Search Console (.com + .co.za): `satoshisandrands.com/sitemap.xml`
 - [ ] **Request indexing** for 5 blog URLs in Search Console
-- [ ] Queue 7 X/Twitter threads to Buffer (channel: `69bfba13af47dacb6942111f`)
-- [ ] Upload 4 TikTok MP4s to Buffer TikTok channel (`69bfbdc6af47dacb6942196c`)
-- [ ] `/learn` education hub — build into Next.js, go live ~21 June 2026 (week before tax season)
-- [ ] **Tax tool icons** — replace emoji (📊 ⚖️ 🔍) with custom brand SVGs on homepage + tool pages + MobileMenu
-- [ ] SA Personality Clip Series — source Stafford Masie / Ran Neu-Ner clips
+- [ ] **Monetisation — Exchange affiliates**: Apply for Luno + VALR + Binance affiliate programmes (target May 2026)
+- [ ] **Monetisation — Affiliate links on site**: "Trusted Exchanges" section + CTAs on tool result pages
+- [ ] **Monetisation — Tax practitioner referrals**: Identify 2–3 SA crypto tax pros, approach for referral deal (target June 2026)
+- [ ] **Monetisation — Premium PDF report**: PayFast + PDF generation for CGT Calculator (target July 2026)
+- [ ] `/learn` education hub — build into Next.js (go live ~21 June 2026)
+- [ ] Add Guides + News to mobile burger menu (homepage)
 - [ ] Add more blog articles (target 8–10 before tax season)
-- [ ] Add Guides + News to mobile nav (burger menu on homepage)
-- [ ] **Security audit** (registry #035) — API key exposure, rate limiting, CSP headers, npm audit, Vercel/Buffer access controls, env var rotation
-  - Scope: CMC key, HF public endpoint throttling, Buffer API key, CSP headers, `npm audit`, Vercel deploy access
+- [ ] SA Personality Clip Series — source Stafford Masie / Ran Neu-Ner clips
+- [ ] Queue 7 X/Twitter threads to Buffer (channel: `69bfba13af47dacb6942111f`)
+- [ ] Upload 4 TikTok MP4s to Buffer (channel: `69bfbdc6af47dacb6942196c`)
+- [ ] **Security audit** (registry #035) — CMC key, HF throttling, Buffer key, CSP headers, npm audit, Vercel access
+- [ ] **App scoping session** (registry #036) — July/Aug 2026, PWA vs native decision
 
 ---
 
@@ -81,12 +90,14 @@
 
 ---
 
-## Analytics & Tracking
-| Tool | Status | Access |
-|------|--------|--------|
-| Vercel Analytics | Installed, needs enabling | vercel.com → satoshisandrands → Analytics |
-| Google Search Console .com | ✅ Verified | search.google.com/search-console |
-| Google Search Console .co.za | ✅ Verified | search.google.com/search-console |
+## Key Milestones
+
+| Milestone | Target | Registry |
+|-----------|--------|---------|
+| Affiliate links live | May 2026 | #037 |
+| Education hub (/learn) live | 21 Jun 2026 | — |
+| Monetisation fully live | Oct 2026 | #037 |
+| App go-live | Nov 2026 | #036 |
 
 ---
 
@@ -102,10 +113,10 @@ cd /Users/base/SatsxRands/website && vercel deploy --prod
 # View education hub mockup
 open /tmp/sxr_learn_mockup.html
 
-# Next tasks
-# 1. Build tax tool SVG icons (homepage + tool pages + MobileMenu)
-# 2. Build /learn into Next.js
-# 3. Enable Vercel Analytics in dashboard
+# Next priority
+# 1. Apply for Luno/VALR/Binance affiliate programmes
+# 2. Add affiliate CTAs to Classifier + CARF result pages
+# 3. Build /learn into Next.js
 ```
 
 ---
@@ -118,14 +129,16 @@ open /tmp/sxr_learn_mockup.html
 | `src/app/sitemap.ts` | Auto-generated sitemap (13 URLs) |
 | `vercel.json` | .co.za → .com 301 redirect |
 | `src/app/globals.css` | Mobile overrides, article body styles |
+| `src/components/TaxToolIcons.tsx` | CgtIcon, ClassifierIcon, CarfIcon SVGs |
+| `src/components/CoinIcons.tsx` | BtcIcon, EthIcon, SolIcon, XrpIcon, BnbIcon SVGs |
+| `src/components/Sidebar.tsx` | Desktop tax tools sidebar |
+| `src/components/MobileMenu.tsx` | Mobile burger drawer |
 | `src/components/BlogFilter.tsx` | Client-side category filter |
 | `src/content/blog/articles.ts` | All 4 blog articles |
-| `src/app/blog/[slug]/page.tsx` | Individual article pages |
 | `src/app/news/page.tsx` | News feed with sentiment badges |
 | `src/app/api/news/route.ts` | RSS + finbert sentiment API |
 | `src/app/api/market/route.ts` | CoinMarketCap proxy |
-| `public/og-image.png` | 1200×630 OG image |
-| `/tmp/sxr_learn_mockup.html` | Interactive education hub mockup (not yet in Next.js) |
-| `notes/growth-plan-2026.md` | Full growth strategy |
-| `notes/weekly-post-rhythm.md` | Daily posting schedule |
-| `notes/content-calendar-q2-2026.md` | April–June content calendar |
+| `/tmp/sxr_learn_mockup.html` | Interactive education hub mockup |
+| `notes/growth-plan-2026.md` | 90-day growth strategy |
+| `notes/2026-03-25-monetisation.md` | Monetisation plan (4 streams, timeline) |
+| `notes/2026-03-25-app-nov-milestone.md` | Nov 2026 app scoping notes |

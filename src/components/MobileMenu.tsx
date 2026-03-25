@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
 
 const tools = [
-  { href: "/tax-tools/cgt", icon: "📊", label: "CGT Calculator", sub: "Capital gains tax" },
-  { href: "/tax-tools/classifier", icon: "⚖️", label: "Trader Classifier", sub: "Investor vs trader" },
-  { href: "/tax-tools/carf", icon: "🔍", label: "CARF Checker", sub: "Compliance check" },
+  { href: "/tax-tools/cgt", icon: <CgtIcon size={22} />, label: "CGT Calculator", sub: "Capital gains tax" },
+  { href: "/tax-tools/classifier", icon: <ClassifierIcon size={22} />, label: "Trader Classifier", sub: "Investor vs trader" },
+  { href: "/tax-tools/carf", icon: <CarfIcon size={22} />, label: "CARF Checker", sub: "Compliance check" },
 ];
 
 export default function MobileMenu() {
@@ -111,7 +112,7 @@ export default function MobileMenu() {
                 borderLeft: active ? "3px solid var(--gold)" : "3px solid transparent",
               }}
             >
-              <span style={{ fontSize: 20 }}>{t.icon}</span>
+              <span style={{ display: "flex", alignItems: "center" }}>{t.icon}</span>
               <div>
                 <div
                   style={{

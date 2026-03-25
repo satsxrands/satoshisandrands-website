@@ -3,13 +3,14 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { BtcIcon, EthIcon, SolIcon, XrpIcon, BnbIcon } from "@/components/CoinIcons";
 
-const COIN_ICONS: Record<string, string> = {
-  BTC: "₿",
-  ETH: "Ξ",
-  SOL: "◎",
-  XRP: "✕",
-  BNB: "⬡",
+const COIN_ICONS: Record<string, React.ReactNode> = {
+  BTC: <BtcIcon size={22} />,
+  ETH: <EthIcon size={22} />,
+  SOL: <SolIcon size={22} />,
+  XRP: <XrpIcon size={22} />,
+  BNB: <BnbIcon size={22} />,
 };
 
 const COIN_COLORS: Record<string, string> = {
@@ -204,8 +205,7 @@ export default function MarketPage() {
                     background: `${COIN_COLORS[coin.symbol]}18`,
                     border: `1px solid ${COIN_COLORS[coin.symbol]}33`,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 16, color: COIN_COLORS[coin.symbol],
-                    fontWeight: 700, flexShrink: 0,
+                    flexShrink: 0,
                   }}>
                     {COIN_ICONS[coin.symbol]}
                   </div>

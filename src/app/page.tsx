@@ -1,38 +1,55 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
 
 const tools = [
   {
     href: "/tax-tools/cgt",
-    icon: "📊",
+    icon: <CgtIcon size={36} />,
     color: "var(--gold)",
     title: "CGT Calculator",
     desc: "Calculate your capital gains tax on crypto using SARS 2026/27 brackets. Investor and trader paths.",
   },
   {
     href: "/tax-tools/classifier",
-    icon: "⚖️",
+    icon: <ClassifierIcon size={36} />,
     color: "var(--green)",
     title: "Trader Classifier",
     desc: "5-question quiz to determine if SARS will treat you as an investor (CGT) or a trader (income tax).",
   },
   {
     href: "/tax-tools/carf",
-    icon: "🔍",
+    icon: <CarfIcon size={36} />,
     color: "var(--red)",
     title: "CARF Checker",
     desc: "Check your CARF compliance risk. SA exchanges report to SARS — find out where you stand.",
   },
   {
     href: "/market",
-    icon: "📈",
+    icon: (
+      <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="4,22 10,14 16,18 24,8 28,12" stroke="#627EEA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <polyline points="4,22 10,14 16,18 24,8 28,12 28,28 4,28" stroke="none" fill="#627EEA" fillOpacity="0.12" />
+        <circle cx="28" cy="12" r="2.5" fill="#627EEA" />
+      </svg>
+    ),
     color: "#627EEA",
     title: "Live Market Data",
     desc: "BTC/ZAR, ETH/ZAR, SOL, XRP, BNB — live prices refreshed every 60 seconds via CoinMarketCap.",
   },
   {
     href: "/news",
-    icon: "📰",
+    icon: (
+      <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="6" width="24" height="20" rx="3" fill="#06D6A0" fillOpacity="0.12" stroke="#06D6A0" strokeWidth="1.5" />
+        <line x1="9" y1="12" x2="23" y2="12" stroke="#06D6A0" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="9" y1="16" x2="23" y2="16" stroke="#06D6A0" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+        <line x1="9" y1="20" x2="17" y2="20" stroke="#06D6A0" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
+        <circle cx="24" cy="8" r="4" fill="#1C1C1C" />
+        <circle cx="24" cy="8" r="4" fill="#06D6A0" fillOpacity="0.25" stroke="#06D6A0" strokeWidth="1.2" />
+        <circle cx="24" cy="8" r="1.8" fill="#06D6A0" />
+      </svg>
+    ),
     color: "var(--green)",
     title: "SA Crypto News",
     desc: "Live crypto news with SA relevance. Sentiment-scored headlines updated every 15 minutes.",
@@ -335,7 +352,7 @@ export default function Home() {
                 transition: "border-color 200ms, background 200ms",
               }}
             >
-              <div style={{ fontSize: 28, marginBottom: 14 }}>{t.icon}</div>
+              <div style={{ marginBottom: 14 }}>{t.icon}</div>
               <h3
                 style={{
                   fontFamily: "var(--font-bebas), sans-serif",

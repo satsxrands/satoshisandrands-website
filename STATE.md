@@ -94,7 +94,7 @@
 
 ### Infrastructure
 - [ ] App scoping session (registry #036) — PWA vs native, July/Aug 2026
-- [ ] Clean up stale `/Users/base/SatsxRands/` directory (old copy — Projects/SatsxRands is canonical)
+- [x] Stale `/Users/base/SatsxRands/` directory removed — `Projects/SatsxRands/` is canonical
 
 ---
 

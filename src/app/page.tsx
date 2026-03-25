@@ -30,10 +30,16 @@ const tools = [
     title: "Live Market Data",
     desc: "BTC/ZAR, ETH/ZAR, SOL, XRP, BNB — live prices refreshed every 60 seconds via CoinMarketCap.",
   },
+  {
+    href: "/news",
+    icon: "📰",
+    color: "var(--green)",
+    title: "SA Crypto News",
+    desc: "Live crypto news with SA relevance. Sentiment-scored headlines updated every 15 minutes.",
+  },
 ];
 
 const upcoming = [
-  { icon: "📰", label: "SA Crypto News", desc: "Curated news for South African investors" },
   { icon: "🎓", label: "Education Hub", desc: "Crypto 101, SARS guides, beginner to advanced" },
 ];
 

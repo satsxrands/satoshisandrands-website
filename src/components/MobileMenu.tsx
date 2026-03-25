@@ -33,7 +33,7 @@ export default function MobileMenu() {
       <div
         style={{
           position: "fixed",
-          bottom: open ? 0 : "-320px",
+          bottom: 0,
           left: 0,
           right: 0,
           zIndex: 400,
@@ -41,7 +41,9 @@ export default function MobileMenu() {
           borderTop: "1px solid var(--border)",
           borderRadius: "20px 20px 0 0",
           padding: "20px 0 32px",
-          transition: "bottom 300ms cubic-bezier(0.32, 0.72, 0, 1)",
+          transform: open ? "translateY(0)" : "translateY(110%)",
+          transition: "transform 300ms cubic-bezier(0.32, 0.72, 0, 1)",
+          pointerEvents: open ? "auto" : "none",
         }}
       >
         {/* Handle */}

@@ -47,9 +47,9 @@ html { scroll-behavior: smooth; }
   /* Mobile menu button: only show on mobile */
   .mobile-menu-btn { display: flex !important; }
 
-  /* Tool pages: reduce padding + max-width full */
+  /* Tool pages: reduce padding + max-width full, extra bottom for burger button */
   .tool-page {
-    padding: 20px !important;
+    padding: 20px 20px 96px !important;
     max-width: 100% !important;
     width: 100% !important;
   }

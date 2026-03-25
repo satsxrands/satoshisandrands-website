@@ -1,9 +1,16 @@
 # SatoshisAndRands — Session Checkpoint
-**Date:** 2026-03-24 (end of session)
+**Date:** 2026-03-25
 
 ---
 
 ## Completed This Session
+
+### Homepage + Burger Menu Fixes (2026-03-25)
+- [x] News removed from "coming soon" — added as live green card in tools grid
+- [x] Education Hub is now the only remaining "coming soon" item
+- [x] Burger menu: switched from `bottom: -320px` to `transform: translateY(110%)` — always fully clears regardless of drawer height
+- [x] Added `pointerEvents: none` when drawer closed — no accidental tap blocking
+- [x] Tool pages: `padding-bottom: 96px` on mobile so burger button never covers disclaimer
 
 ### Mobile Nav Fixes
 - [x] Social links (Instagram, X, Facebook) wrapped in single `nav-social` div — hidden on mobile

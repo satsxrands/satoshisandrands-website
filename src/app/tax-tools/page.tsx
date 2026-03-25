@@ -1,23 +1,24 @@
 import Link from "next/link";
+import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
 
 const tools = [
   {
     href: "/tax-tools/cgt",
-    icon: "📊",
+    icon: <CgtIcon size={32} />,
     color: "var(--gold)",
     title: "CGT Calculator",
     desc: "Calculate your capital gains tax on crypto using SARS 2026/27 brackets. Investor and trader paths.",
   },
   {
     href: "/tax-tools/classifier",
-    icon: "⚖️",
+    icon: <ClassifierIcon size={32} />,
     color: "var(--green)",
     title: "Trader Classifier",
     desc: "5-question quiz to determine if SARS will treat you as an investor (CGT) or a trader (income tax).",
   },
   {
     href: "/tax-tools/carf",
-    icon: "🔍",
+    icon: <CarfIcon size={32} />,
     color: "var(--red)",
     title: "CARF Checker",
     desc: "Check your CARF compliance risk. SA exchanges report to SARS — find out where you stand.",
@@ -62,7 +63,7 @@ export default function TaxToolsIndex() {
               textDecoration: "none",
             }}
           >
-            <span style={{ fontSize: 28, flexShrink: 0, marginTop: 2 }}>{t.icon}</span>
+            <span style={{ flexShrink: 0, marginTop: 2, display: "flex" }}>{t.icon}</span>
             <div>
               <h3
                 style={{

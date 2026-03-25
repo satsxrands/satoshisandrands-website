@@ -62,7 +62,7 @@ function getResult(score: number, answered: number) {
       verdict: "Likely Investor",
       tag: "CGT Applies",
       color: "var(--green)",
-      icon: "📈",
+      icon: "✓",
       description:
         "SARS will likely treat your crypto gains as capital in nature. The R50,000 annual exclusion applies, and only 40% of your net gain is included in taxable income. Max effective rate: 18%.",
     };
@@ -72,7 +72,7 @@ function getResult(score: number, answered: number) {
       verdict: "Borderline",
       tag: "Consult a Professional",
       color: "var(--gold)",
-      icon: "⚖️",
+      icon: "~",
       description:
         "Your profile shows mixed signals. SARS could classify you as either investor or trader depending on intent and conduct. A registered tax practitioner can help you document your position before filing.",
     };

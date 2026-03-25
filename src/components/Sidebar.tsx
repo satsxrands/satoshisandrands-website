@@ -2,23 +2,24 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
 
 const tools = [
   {
     href: "/tax-tools/cgt",
-    icon: "📊",
+    icon: <CgtIcon size={18} />,
     label: "CGT Calculator",
     sub: "Capital gains tax",
   },
   {
     href: "/tax-tools/classifier",
-    icon: "⚖️",
+    icon: <ClassifierIcon size={18} />,
     label: "Trader Classifier",
     sub: "Investor vs trader",
   },
   {
     href: "/tax-tools/carf",
-    icon: "🔍",
+    icon: <CarfIcon size={18} />,
     label: "CARF Checker",
     sub: "Compliance check",
   },
@@ -84,7 +85,7 @@ export default function Sidebar() {
                 transition: "background 150ms",
               }}
             >
-              <span style={{ fontSize: 16 }}>{t.icon}</span>
+              <span style={{ display: "flex", alignItems: "center" }}>{t.icon}</span>
               <div>
                 <div
                   style={{

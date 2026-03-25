@@ -57,7 +57,17 @@ const tools = [
 ];
 
 const upcoming = [
-  { icon: "🎓", label: "Education Hub", desc: "Crypto 101, SARS guides, beginner to advanced" },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4,13 L16,7 L28,13 L16,19 Z" fill="#888" fillOpacity="0.5" stroke="#888" strokeWidth="1.2" strokeLinejoin="round" />
+        <path d="M9,16 L9,23 C9,23 12,26 16,26 C20,26 23,23 23,23 L23,16" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <line x1="28" y1="13" x2="28" y2="21" stroke="#888" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+      </svg>
+    ),
+    label: "Education Hub",
+    desc: "Crypto 101, SARS guides, beginner to advanced",
+  },
 ];
 
 export default function Home() {
@@ -448,7 +458,7 @@ export default function Home() {
                 opacity: 0.6,
               }}
             >
-              <div style={{ fontSize: 24, marginBottom: 12 }}>{u.icon}</div>
+              <div style={{ marginBottom: 12 }}>{u.icon}</div>
               <h3
                 style={{
                   fontFamily: "var(--font-nunito), sans-serif",

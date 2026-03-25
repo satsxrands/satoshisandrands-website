@@ -47,6 +47,13 @@
 - [x] `weekly-post-rhythm.md` — daily schedule, hashtag stacks, monthly anchors
 - [x] `content-calendar-q2-2026.md` — week-by-week April–June 2026
 
+### Education Hub Mockup
+- [x] `/tmp/sxr_learn_mockup.html` — fully interactive mockup built
+- [x] SVG icons replacing all emoji (14 lessons across 5 sections)
+- [x] Filter pills, lesson expand/collapse, sequential unlock, progress bar (localStorage)
+- [x] Tool CTAs per lesson linking to CGT Calculator, Classifier, CARF Checker
+- [x] User reviewed — approved structure, pending more testing
+
 ---
 
 ## Pending Tasks
@@ -56,8 +63,8 @@
 - [ ] **Request indexing** for 5 blog URLs in Search Console
 - [ ] Queue 7 X/Twitter threads to Buffer (channel: `69bfba13af47dacb6942111f`)
 - [ ] Upload 4 TikTok MP4s to Buffer TikTok channel (`69bfbdc6af47dacb6942196c`)
-- [ ] `/learn` education hub — mockup + go live ~21 June 2026 (week before tax season)
-- [ ] Tax tool icons — replace emoji (📊 ⚖️ 🔍) with custom brand SVGs
+- [ ] `/learn` education hub — build into Next.js, go live ~21 June 2026 (week before tax season)
+- [ ] **Tax tool icons** — replace emoji (📊 ⚖️ 🔍) with custom brand SVGs on homepage + tool pages + MobileMenu
 - [ ] SA Personality Clip Series — source Stafford Masie / Ran Neu-Ner clips
 - [ ] Add more blog articles (target 8–10 before tax season)
 - [ ] Add Guides + News to mobile nav (burger menu on homepage)
@@ -92,11 +99,13 @@ cd /Users/base/SatsxRands/website && npm run dev
 # Deploy
 cd /Users/base/SatsxRands/website && vercel deploy --prod
 
+# View education hub mockup
+open /tmp/sxr_learn_mockup.html
+
 # Next tasks
-# 1. Enable Vercel Analytics in dashboard
-# 2. Submit sitemap in both Search Console properties
-# 3. /learn education hub mockup
-# 4. Tax tool custom SVG icons
+# 1. Build tax tool SVG icons (homepage + tool pages + MobileMenu)
+# 2. Build /learn into Next.js
+# 3. Enable Vercel Analytics in dashboard
 ```
 
 ---
@@ -116,6 +125,7 @@ cd /Users/base/SatsxRands/website && vercel deploy --prod
 | `src/app/api/news/route.ts` | RSS + finbert sentiment API |
 | `src/app/api/market/route.ts` | CoinMarketCap proxy |
 | `public/og-image.png` | 1200×630 OG image |
+| `/tmp/sxr_learn_mockup.html` | Interactive education hub mockup (not yet in Next.js) |
 | `notes/growth-plan-2026.md` | Full growth strategy |
 | `notes/weekly-post-rhythm.md` | Daily posting schedule |
 | `notes/content-calendar-q2-2026.md` | April–June content calendar |

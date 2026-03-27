@@ -32,7 +32,8 @@ function parseRSS(xml: string, source: string, category: string): Omit<NewsItem,
     const title = block.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/)?.[1]
       ?? block.match(/<title>(.*?)<\/title>/)?.[1]
       ?? "";
-    const link = block.match(/<link>(.*?)<\/link>/)?.[1]
+    const link = block.match(/<link><!\[CDATA\[(.*?)\]\]><\/link>/)?.[1]
+      ?? block.match(/<link>(.*?)<\/link>/)?.[1]
       ?? block.match(/<guid[^>]*>(https?:\/\/[^<]+)<\/guid>/)?.[1]
       ?? "";
     const desc = block.match(/<description><!\[CDATA\[(.*?)\]\]><\/description>/)?.[1]

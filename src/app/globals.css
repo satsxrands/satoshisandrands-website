@@ -25,11 +25,16 @@ html { scroll-behavior: smooth; }
 /* Burger button: hidden by default, shown only on mobile */
 .mobile-menu-btn { display: none; }
 
+/* Social icons: show icon on mobile, text on desktop */
+.nav-social-icon { display: none; }
+.nav-social-label { display: inline; }
+
 /* ── Mobile overrides ──────────────────────────────────── */
 @media (max-width: 640px) {
-  /* Hide social links + secondary nav items on mobile */
-  .nav-social { display: none !important; }
+  /* Secondary nav items hidden, social links stay but icon-only */
   .nav-secondary { display: none !important; }
+  .nav-social-label { display: none !important; }
+  .nav-social-icon { display: block !important; }
 
   /* Homepage nav: tighten padding, hide brand text (links stay) */
   .home-nav { padding: 0 16px !important; }

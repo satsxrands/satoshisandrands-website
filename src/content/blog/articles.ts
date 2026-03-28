@@ -300,6 +300,310 @@ Effective rate on your R180,000 gain: 10.4%</p>
 <p>Use our free <a href="/tax-tools/cgt">CGT Calculator</a> — enter your buy price, sell price, and units, choose investor or trader, and get your estimated tax instantly. No signup, no data stored.</p>
     `.trim(),
   },
+  {
+    slug: "crypto-losses-tax-south-africa",
+    title: "Can You Deduct Crypto Losses From Tax in South Africa?",
+    excerpt: "Lost money on crypto? SARS allows capital losses to offset gains — but only under specific conditions. Here's how SA crypto loss deductions work and what to watch out for.",
+    date: "2026-03-22",
+    readTime: 5,
+    category: "CGT",
+    content: `
+<p>Crypto goes down as well as up. If you sold at a loss this year, the good news is that SARS does allow you to offset those losses — but only if you follow the right rules.</p>
+
+<h2>Capital Losses vs Revenue Losses</h2>
+
+<p>How your loss is treated depends — again — on whether you're classified as an investor or a trader.</p>
+
+<h3>Investor (CGT losses)</h3>
+<p>Capital losses can only be set off against capital gains in the same or future tax years. They cannot reduce your salary or other income. They carry forward indefinitely until you have capital gains to absorb them.</p>
+
+<h3>Trader (Revenue losses)</h3>
+<p>If you're a trader and your crypto trading produces a loss, that loss can in theory offset other income — but SARS scrutinises this closely. Assessed losses from crypto trading are typically ring-fenced unless trading is your primary business.</p>
+
+<h2>The CGT Offset Mechanism</h2>
+
+<p>As an investor, here's how losses work in practice:</p>
+
+<p>Say you made R120,000 on BTC but lost R30,000 on ETH in the same tax year.</p>
+<ul>
+  <li>Net capital gain: R120,000 − R30,000 = <strong>R90,000</strong></li>
+  <li>Less R50,000 annual exclusion: <strong>R40,000</strong></li>
+  <li>40% inclusion: <strong>R16,000 added to taxable income</strong></li>
+</ul>
+
+<p>Compare that to paying tax on R120,000 gain without the loss offset. The ETH loss saves you real money.</p>
+
+<h2>Carrying Forward Losses</h2>
+
+<p>If your total capital losses exceed your capital gains in a year, the excess carries forward to the next tax year. There's no time limit — you can carry losses forward until you eventually have gains to absorb them.</p>
+
+<p>Example: You made no gains in 2025/26 but lost R80,000 on crypto. That R80,000 capital loss carries forward. In 2026/27, you make R150,000 in gains. Your net gain: R150,000 − R80,000 = R70,000. Then apply the R50,000 exclusion.</p>
+
+<h2>What You Cannot Do</h2>
+
+<ul>
+  <li><strong>Capital losses cannot reduce salary income</strong> — they can only offset other capital gains</li>
+  <li><strong>Losses on assets held for personal use</strong> are disregarded (not applicable to crypto, which is an investment asset)</li>
+  <li><strong>Wash sale rules</strong> — SARS doesn't have explicit wash sale rules like the US IRS, but be careful about artificially crystallising losses and immediately repurchasing the same asset</li>
+</ul>
+
+<h2>Record Everything</h2>
+
+<p>To claim a capital loss, you need records proving the loss. Keep your exchange transaction history showing purchase price, sale price, date, and fees. If you're audited, you must be able to substantiate every loss claim.</p>
+
+<h2>Calculate Your Net Position</h2>
+
+<p>Use our free <a href="/tax-tools/cgt">CGT Calculator</a> to run both your gains and losses. Enter each transaction separately to see your net position and estimated tax — including how losses reduce your final bill.</p>
+    `.trim(),
+  },
+  {
+    slug: "sars-crypto-audit-what-to-expect",
+    title: "SARS Crypto Audit: What Triggers It and What Happens Next",
+    excerpt: "With CARF live since March 2026, SARS has more crypto data than ever. Here's what triggers a crypto audit, what to expect if you receive a letter, and how to respond correctly.",
+    date: "2026-03-23",
+    readTime: 6,
+    category: "Filing",
+    content: `
+<p>CARF changed everything. SA exchanges now automatically report every crypto transaction to SARS. If your ITR12 doesn't match what your exchange reported, SARS will notice — and they will act.</p>
+
+<h2>What Triggers a Crypto Audit</h2>
+
+<p>SARS uses risk-based selection. The most common triggers for crypto-related audits include:</p>
+
+<ul>
+  <li><strong>CARF mismatch</strong> — exchange reports show activity but your ITR12 shows no crypto income or gains</li>
+  <li><strong>No ITR12 filed</strong> — if you're registered as a taxpayer and CARF data shows you have crypto, expect a prompt</li>
+  <li><strong>Large transfers with no declared source</strong> — crypto sales that land in your bank account without a corresponding tax declaration</li>
+  <li><strong>High frequency trading declared as CGT</strong> — if CARF data shows daily or weekly trading but you filed as an investor</li>
+  <li><strong>Wealth vs income mismatch</strong> — significant crypto holdings visible to SARS that aren't proportionate to declared income</li>
+</ul>
+
+<h2>Types of SARS Correspondence</h2>
+
+<h3>Verification Request (Section 42)</h3>
+<p>SARS asks you to confirm specific information on your return. Less serious than a full audit. Respond within 21 days with supporting documents.</p>
+
+<h3>Audit (Section 40–41)</h3>
+<p>A formal examination of your tax affairs. SARS may request transaction records, bank statements, and exchange statements going back up to 5 years (longer if fraud is suspected).</p>
+
+<h3>SARS 369 Letter</h3>
+<p>A notice of understatement or additional assessment. This arrives after SARS has already made a determination. You have 30 days to object if you disagree.</p>
+
+<h2>Documents SARS Will Request</h2>
+
+<p>If you receive audit correspondence, start gathering:</p>
+<ol>
+  <li>Complete transaction history from all exchanges (Luno, VALR, Binance, etc.)</li>
+  <li>Bank statements showing ZAR deposits and withdrawals linked to crypto</li>
+  <li>Proof of purchase prices (date, ZAR value, exchange rate if purchased in USD)</li>
+  <li>Proof of all fees paid</li>
+  <li>Prior year ITR12 submissions showing your crypto declarations</li>
+</ol>
+
+<h2>Understatement Penalties</h2>
+
+<p>If SARS finds that you understated your income or gains, penalties apply based on the behaviour type:</p>
+
+<ul>
+  <li><strong>Substantial understatement</strong> (>R1m or >20% of tax): 25%</li>
+  <li><strong>Reasonable care not taken</strong>: 25%</li>
+  <li><strong>No reasonable grounds for position</strong>: 50%</li>
+  <li><strong>Impermissible avoidance</strong>: 75%</li>
+  <li><strong>Intentional tax evasion</strong>: 100–200%</li>
+</ul>
+
+<p>Plus interest (currently ~10.25% per year) on any unpaid tax from the date it was due.</p>
+
+<h2>If You Haven't Filed Yet: Act First</h2>
+
+<p>The Voluntary Disclosure Programme (VDP) allows you to correct prior non-disclosure with 100% penalty relief — but only if SARS has not yet contacted you. Once you receive any audit letter, the VDP window closes for that matter.</p>
+
+<p>The proactive option: engage a registered tax practitioner (tax attorney or SARS-registered tax practitioner) before SARS makes contact.</p>
+
+<h2>Check Your Risk Level Now</h2>
+
+<p>Our free <a href="/tax-tools/carf">CARF Compliance Checker</a> takes 2 minutes and tells you whether your current crypto activity creates an audit risk — and what to do about it.</p>
+    `.trim(),
+  },
+  {
+    slug: "bitcoin-dca-tax-south-africa",
+    title: "Bitcoin DCA and Tax in South Africa: What SARS Thinks of Monthly Buys",
+    excerpt: "Millions of South Africans DCA into Bitcoin monthly. Here's how SARS treats regular crypto purchases, which cost base method to use, and whether DCA protects your investor status.",
+    date: "2026-03-24",
+    readTime: 5,
+    category: "Tax Basics",
+    content: `
+<p>Dollar-cost averaging (DCA) — buying a fixed rand amount of Bitcoin every month — is one of the most popular crypto strategies in South Africa. It reduces price risk and builds a position over time. But what does SARS make of it?</p>
+
+<h2>DCA and Investor vs Trader Classification</h2>
+
+<p>The good news: regular buying does <em>not</em> automatically make you a trader. SARS looks at <em>buying and selling</em> behaviour, not just buying. Someone who buys R2,000 of BTC every month but never sells is overwhelmingly likely to be classified as an investor.</p>
+
+<p>The risk comes when you start selling frequently. If you DCA in but also sell portions regularly — weekly or monthly — SARS may look at your overall pattern and reclassify you.</p>
+
+<p><strong>Rule of thumb:</strong> DCA into BTC with a plan to hold for years = investor. DCA in and regularly take profits = worth assessing your classification.</p>
+
+<h2>Cost Base: The Weighted Average Method</h2>
+
+<p>SARS uses the <strong>weighted average cost</strong> method for crypto assets. If you've bought Bitcoin at different prices over time, you calculate your average cost across all purchases:</p>
+
+<p>Example:</p>
+<ul>
+  <li>Jan 2025: 0.01 BTC at R800,000/BTC = R8,000 cost</li>
+  <li>Feb 2025: 0.01 BTC at R1,000,000/BTC = R10,000 cost</li>
+  <li>Mar 2025: 0.01 BTC at R900,000/BTC = R9,000 cost</li>
+  <li>Total: 0.03 BTC at average cost R900,000/BTC</li>
+</ul>
+
+<p>If you sell 0.01 BTC at R1,200,000/BTC:</p>
+<ul>
+  <li>Proceeds: R12,000</li>
+  <li>Cost base (weighted avg): R9,000</li>
+  <li>Gain: R3,000</li>
+</ul>
+
+<p>This is more favourable than FIFO (first in, first out) if your early purchases were cheap — because it spreads the low cost base across all units rather than wiping out your cheapest ones first.</p>
+
+<h2>Tracking DCA for Tax Purposes</h2>
+
+<p>If you DCA monthly, you'll have 12+ buy entries per year. Each one needs to be recorded:</p>
+<ul>
+  <li>Date of purchase</li>
+  <li>ZAR amount spent</li>
+  <li>BTC received (after fees)</li>
+  <li>Effective ZAR price per BTC on that date</li>
+</ul>
+
+<p>Luno and VALR both allow you to export your full transaction history as a CSV. Do this once a year at tax time and keep it with your other financial records.</p>
+
+<h2>What If You've Been DCA-ing for Years Without Records?</h2>
+
+<p>Start now. Request historical statements from your exchange — most SA exchanges retain data for 5+ years. You can reconstruct your cost base from exchange records even if you didn't keep your own.</p>
+
+<p>If you genuinely have no records (e.g., you lost access to an old exchange account), you'll need to use the market price at acquisition as a best estimate and document your methodology in case of audit.</p>
+
+<h2>The Tax on Your DCA Position</h2>
+
+<p>When you eventually sell, use our <a href="/tax-tools/cgt">CGT Calculator</a> to calculate your gain. Enter your weighted average cost, your sell price, and the number of units sold. The tool handles the R50,000 exclusion and 40% inclusion rate automatically.</p>
+    `.trim(),
+  },
+  {
+    slug: "crypto-staking-yield-tax-south-africa",
+    title: "Crypto Staking and Yield: How SARS Taxes DeFi Income in SA",
+    excerpt: "Earning rewards from staking, liquidity pools, or yield products? SARS treats crypto rewards as income the moment you receive them. Here's how it works and what records you need.",
+    date: "2026-03-25",
+    readTime: 5,
+    category: "Tax Basics",
+    content: `
+<p>Staking rewards. Liquidity pool yields. Earn products on Luno or VALR. As crypto becomes more sophisticated, so does the tax picture. SARS hasn't issued specific guidance on DeFi — but the Income Tax Act still applies.</p>
+
+<h2>The Core Principle: Rewards Are Income When Received</h2>
+
+<p>When you receive staking rewards, yield, or any crypto-denominated return, SARS treats that as <strong>income in the hands of the recipient</strong> at the ZAR value on the date received. This is the same principle as receiving foreign dividends or rental income.</p>
+
+<p>You don't wait until you sell. You owe tax on the ZAR value when the reward arrives in your wallet.</p>
+
+<h2>Staking Rewards</h2>
+
+<p>If you stake ETH, SOL, or any PoS asset and receive staking rewards:</p>
+<ul>
+  <li>The reward is <strong>income</strong> at the ZAR value when received</li>
+  <li>Declare it under "other income" on your ITR12 (source code 8022 — foreign income if from an international protocol, or local income if via a SA platform)</li>
+  <li>Your cost base for those reward tokens is the ZAR value when you received them</li>
+  <li>When you later sell those tokens, any gain above that cost base is a capital gain</li>
+</ul>
+
+<p>Example: You receive 0.1 ETH in staking rewards when ETH is worth R50,000. You declare R5,000 as income. Six months later you sell that 0.1 ETH for R60,000. Your gain is R1,000 (taxed as CGT, not income again).</p>
+
+<h2>Liquidity Pool Yield</h2>
+
+<p>Providing liquidity to a DEX (Uniswap, Curve, etc.) and earning fees or LP rewards is treated similarly. Each yield payment is income when received. When you withdraw your LP position, any gain on the underlying assets is a separate CGT event.</p>
+
+<p>Impermanent loss is not explicitly addressed by SARS. The conservative approach: don't recognise it as a loss until you actually withdraw from the pool and crystallise the position.</p>
+
+<h2>Luno Earn / VALR Yield Products</h2>
+
+<p>SA exchange earn products work like savings accounts — you deposit crypto and earn a yield. The interest is income when credited to your account. Your exchange should reflect this in your transaction history as a separate line item.</p>
+
+<h2>What Records You Need</h2>
+
+<ul>
+  <li>Date of each reward/yield payment received</li>
+  <li>Amount in crypto terms (e.g., 0.05 ETH)</li>
+  <li>ZAR value on that date (use the exchange rate from the platform or a reputable price source)</li>
+  <li>Running total of cumulative income per tax year</li>
+</ul>
+
+<p>For DeFi protocols that don't have a clean export, tools like Koinly, CoinTracker, or CryptoTax SA support wallet imports and can reconstruct your income history.</p>
+
+<h2>The Double Tax Problem</h2>
+
+<p>One issue to be aware of: if you receive staking rewards (income event), pay tax on them, and then those tokens drop in value before you sell — you've paid income tax on value you no longer have, and you can only claim a capital loss when you sell. There's no mechanism to reverse the income tax paid. This is an inherent asymmetry in the current framework.</p>
+
+<h2>Seek Professional Advice for Complex DeFi</h2>
+
+<p>Cross-chain bridging, yield farming with rebasing tokens, and NFT royalties are areas where SA tax law is genuinely unclear. If your DeFi activity is significant, a consultation with a registered crypto tax practitioner is worth the cost. Our <a href="/tax-tools/classifier">Classifier tool</a> can help you assess your overall tax profile before you engage a professional.</p>
+    `.trim(),
+  },
+  {
+    slug: "voluntary-disclosure-programme-crypto-sars",
+    title: "SARS VDP and Crypto: How to Fix Undeclared Gains Before It's Too Late",
+    excerpt: "Never declared your crypto gains to SARS? The Voluntary Disclosure Programme offers 100% penalty relief — but only if you act before SARS contacts you. Here's exactly how it works.",
+    date: "2026-03-25",
+    readTime: 6,
+    category: "Filing",
+    content: `
+<p>South Africa's Voluntary Disclosure Programme (VDP) is one of the most powerful tools available to taxpayers who have undeclared income — including crypto gains. With CARF live since March 2026, the window to act proactively is closing fast.</p>
+
+<h2>What Is the VDP?</h2>
+
+<p>The VDP is a formal SARS programme under the Tax Administration Act (section 225–233) that allows taxpayers to voluntarily disclose previously undeclared income or gains in exchange for reduced penalties.</p>
+
+<p>The key benefit: <strong>100% relief from understatement penalties</strong> if your application is approved. You still owe the tax itself, plus interest — but the additional penalties (which can reach 200% of the tax owed for wilful non-disclosure) are waived.</p>
+
+<h2>Who Qualifies?</h2>
+
+<p>To qualify for VDP relief, you must meet all of the following:</p>
+<ul>
+  <li>The disclosure must be <strong>voluntary</strong> — SARS cannot already be investigating or auditing you for that specific matter</li>
+  <li>The disclosure must be <strong>complete</strong> — partial disclosure doesn't qualify</li>
+  <li>The disclosure must be made <strong>in good faith</strong> — you cannot have previously disclosed the same issue incorrectly</li>
+  <li>You cannot have a <strong>prior VDP agreement</strong> for the same tax type and period</li>
+</ul>
+
+<p>Critically: if SARS has already sent you an audit letter, verification request, or any correspondence about your crypto, the VDP door may already be closed for that matter.</p>
+
+<h2>What Tax Years Can You Disclose?</h2>
+
+<p>SARS's standard assessment period is 3 years. However, for fraud or intentional non-disclosure, this extends to 5 years (and there's no limit if SARS can prove fraud). For most crypto holders who simply didn't know they needed to declare — and who have no fraudulent intent — the 3-year window applies.</p>
+
+<p>You can file amended returns or a VDP application covering the 2023/24, 2024/25, and 2025/26 tax years (and the 2026/27 year when it closes in February 2027).</p>
+
+<h2>How to Apply</h2>
+
+<h3>Step 1 — Gather your records</h3>
+<p>You need a complete picture of every crypto transaction across all tax years you're disclosing: purchase dates, prices, sale dates, prices, and exchange fees. Download your full transaction history from every exchange you've used.</p>
+
+<h3>Step 2 — Calculate the tax owed</h3>
+<p>Work out the total capital gain (or trading income) for each tax year. Apply the exclusion and inclusion rate for each year (the R50,000 exclusion was lower in prior years — it was R40,000 in 2024/25 and prior years). Use the marginal tax rate you were in during each year.</p>
+
+<h3>Step 3 — Engage a registered tax practitioner</h3>
+<p>While you can technically apply for VDP yourself via eFiling, a registered tax practitioner (particularly one with crypto experience) significantly increases your chance of a clean application. They'll ensure your disclosure is complete and correctly structured — incomplete VDP applications are rejected and lose their protection.</p>
+
+<h3>Step 4 — Submit via eFiling</h3>
+<p>VDP applications are submitted through SARS eFiling under the "VDP" tab. SARS typically responds within 21 business days. Once approved, you pay the tax and interest under the agreed terms.</p>
+
+<h2>The Cost of Waiting</h2>
+
+<p>Every month you wait, SARS receives more CARF data. If they match your exchange history to your ITR12 declarations before you apply, you lose the VDP option. The penalties that then apply — plus interest compounding on unpaid tax — can easily exceed the tax itself.</p>
+
+<p>The math is clear: act now, pay tax + interest, close the matter. Or wait, risk an audit, and pay tax + interest + penalties up to 200%.</p>
+
+<h2>Assess Your Risk First</h2>
+
+<p>Our free <a href="/tax-tools/carf">CARF Compliance Checker</a> takes 2 minutes to assess your disclosure risk level and gives you a clear recommended action. If it flags medium or high risk, engage a tax practitioner before SARS contacts you.</p>
+    `.trim(),
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

@@ -174,7 +174,7 @@ export default function CGTPage() {
                   transition: "all 150ms",
                 }}
               >
-                {c === "investor" ? "📈 Investor (CGT)" : "⚡ Trader (Income Tax)"}
+                {c === "investor" ? "Investor (CGT)" : "Trader (Income Tax)"}
               </button>
             ))}
           </div>
@@ -275,7 +275,7 @@ export default function CGTPage() {
               borderRadius: 6,
             }}
           >
-            ⚠️ Estimate only. Does not account for base cost adjustments, fees, or multiple disposals. Not tax advice — consult a registered tax practitioner.
+            Estimate only. Does not account for base cost adjustments, fees, or multiple disposals. Not tax advice — consult a registered tax practitioner.
           </p>
         </div>
       )}

@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ShareButton } from "@/components/ShareButton";
 
 interface NewsItem {
   title: string;
@@ -204,14 +205,17 @@ export default function NewsPage() {
                       {item.excerpt}
                     </p>
                   )}
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 900, color, letterSpacing: "0.04em", textDecoration: "none" }}
-                  >
-                    Read article →
-                  </a>
+                  <div style={{ display: "flex", gap: 16, alignItems: "center", justifyContent: "space-between" }}>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 900, color, letterSpacing: "0.04em", textDecoration: "none" }}
+                    >
+                      Read article →
+                    </a>
+                    <ShareButton title={item.title} url={item.url} />
+                  </div>
                 </div>
               );
             })}

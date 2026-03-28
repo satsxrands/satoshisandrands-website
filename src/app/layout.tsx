@@ -25,6 +25,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://satoshisandrands.com"),
   title: "SatoshisAndRands — Crypto Tax Tools for Mzansi",
   description:
     "Free crypto tax tools for South Africans. CGT Calculator, Trader/Investor Classifier, and CARF Compliance Checker. No signup. No data stored.",

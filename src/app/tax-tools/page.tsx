@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
+
+export const metadata: Metadata = {
+  title: "Free Crypto Tax Tools for South Africa — SatoshisAndRands",
+  description:
+    "Three free crypto tax tools built for South African SARS compliance: CGT Calculator, Trader vs Investor Classifier, and CARF Compliance Checker. No signup, no data stored.",
+  openGraph: {
+    title: "Free Crypto Tax Tools for South Africa",
+    description: "CGT Calculator, Trader Classifier, and CARF Checker. Free, no signup, no data stored. Built for South African SARS rules.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: { card: "summary_large_image", images: ["/og-image.png"] },
+};
 
 const tools = [
   {
@@ -91,9 +104,3 @@ export default function TaxToolsIndex() {
   );
 }
 
-export const metadata = {
-  title: "Tax Tools — SatoshisAndRands",
-  description: "Free South African crypto tax tools. CGT Calculator, Trader vs Investor Classifier, CARF Compliance Checker. SARS 2026/27 brackets.",
-  openGraph: { title: "SA Crypto Tax Tools — Free, No Signup", images: [{ url: "/og-image.png", width: 1200, height: 630 }] },
-  twitter: { card: "summary_large_image", images: ["/og-image.png"] },
-};

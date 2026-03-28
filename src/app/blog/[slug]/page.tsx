@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { articles, getArticle } from "@/content/blog/articles";
+import { ShareButton } from "@/components/ShareButton";
 
 export async function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -39,8 +40,27 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const color = CATEGORY_COLORS[article.category] ?? "var(--gold)";
   const others = articles.filter((a) => a.slug !== slug).slice(0, 3);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: { "@type": "Organization", name: "SatoshisAndRands", url: "https://satoshisandrands.com" },
+    publisher: {
+      "@type": "Organization",
+      name: "SatoshisAndRands",
+      url: "https://satoshisandrands.com",
+      logo: { "@type": "ImageObject", url: "https://satoshisandrands.com/satslogo.png" },
+    },
+    image: "https://satoshisandrands.com/og-image.png",
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://satoshisandrands.com/blog/${article.slug}` },
+  };
+
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh", color: "var(--white)" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Nav */}
       <nav style={{ position: "sticky", top: 0, zIndex: 100, height: "var(--topnav-h)", background: "rgba(13,13,13,0.97)", backdropFilter: "blur(12px)", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", padding: "0 40px", justifyContent: "space-between" }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
@@ -77,14 +97,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 15, fontWeight: 600, color: "var(--muted)", lineHeight: 1.6, marginBottom: 16 }}>
             {article.excerpt}
           </p>
-          <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-            <span style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 11, color: "var(--muted)" }}>
-              {new Date(article.date).toLocaleDateString("en-ZA", { day: "numeric", month: "long", year: "numeric" })}
-            </span>
-            <span style={{ color: "var(--border)" }}>·</span>
-            <span style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 11, color: "var(--muted)" }}>
-              {article.readTime} min read
-            </span>
+          <div style={{ display: "flex", gap: 16, alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+              <span style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 11, color: "var(--muted)" }}>
+                {new Date(article.date).toLocaleDateString("en-ZA", { day: "numeric", month: "long", year: "numeric" })}
+              </span>
+              <span style={{ color: "var(--border)" }}>·</span>
+              <span style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 11, color: "var(--muted)" }}>
+                {article.readTime} min read
+              </span>
+            </div>
+            <ShareButton title={article.title} slug={article.slug} />
           </div>
         </div>
 

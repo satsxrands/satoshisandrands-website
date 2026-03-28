@@ -1,9 +1,20 @@
 # SatoshisAndRands Website — State Checkpoint
-_Last updated: 2026-03-25_
+_Last updated: 2026-03-27_
 
 ---
 
 ## Completed This Session
+
+### ShareButton Component (2026-03-27)
+- [x] Created `ShareButton.tsx` — reusable share component with dropdown menu
+- [x] Integrated into blog articles (`/blog/[slug]`) — positioned far-right in header, next to read-time
+- [x] Integrated into news cards (`/news`) — positioned far-right, next to "Read article" link
+- [x] Share options: X, WhatsApp, Facebook, Copy Link
+- [x] SVG share icon (replaced Unicode ↗) for consistent mobile rendering
+- [x] Click-outside detection for menu dismissal
+- [x] Mobile-friendly and responsive
+
+### Previous Completed This Session
 
 ### On-Page SEO
 - [x] Added `metadataBase: new URL("https://satoshisandrands.com")` to root `layout.tsx` (fixes OG image resolution)

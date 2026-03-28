@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/content/blog/articles";
+import { modules } from "@/content/learn/modules";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://satoshisandrands.com";
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/market`, lastModified: new Date(), changeFrequency: "hourly", priority: 0.7 },
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/news`, lastModified: new Date(), changeFrequency: "hourly", priority: 0.6 },
+    { url: `${base}/learn`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
@@ -22,5 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const learnRoutes: MetadataRoute.Sitemap = modules.map((module) => ({
+    url: `${base}/learn/${module.slug}`,
+    lastModified: new Date(module.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...blogRoutes, ...learnRoutes];
 }

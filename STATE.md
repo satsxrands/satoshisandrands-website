@@ -55,9 +55,17 @@ _Last updated: 2026-03-27_
 
 ---
 
+## Deployment
+
+**Latest Production:** `dpl_GRhnBwQHKc7kqqMCmgZCa6dPMVbg`
+**Live at:** https://satoshisandrands.com (ShareButton integrated in blog + news)
+**Deployed:** 2026-03-27 17:00 UTC
+
+---
+
 ## Pending Tasks
 
-### Immediate (tomorrow — quota resets daily)
+### Immediate (quota resets daily)
 - [ ] Submit indexing request: `https://satoshisandrands.com/blog/crypto-staking-yield-tax-south-africa`
 - [ ] Submit indexing request: `https://satoshisandrands.com/blog/voluntary-disclosure-programme-crypto-sars`
   → Search Console URL Inspection → paste URL → "Request indexing"

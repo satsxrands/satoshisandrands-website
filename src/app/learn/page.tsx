@@ -177,6 +177,48 @@ export default function LearnPage() {
         </div>
       </section>
 
+      {/* Quick Links */}
+      <section
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "0 40px 40px",
+        }}
+      >
+        <a
+          href="/learn/glossary"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "12px 20px",
+            background: "rgba(6, 214, 160, 0.1)",
+            border: "1px solid rgba(6, 214, 160, 0.3)",
+            borderRadius: "8px",
+            color: "var(--green)",
+            textDecoration: "none",
+            fontFamily: "'Nunito', sans-serif",
+            fontSize: "14px",
+            fontWeight: 600,
+            transition: "all 0.2s",
+            cursor: "pointer",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "var(--green)";
+            e.currentTarget.style.color = "var(--bg)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(6, 214, 160, 0.1)";
+            e.currentTarget.style.color = "var(--green)";
+          }}
+        >
+          📚 Crypto Dictionary
+          <span style={{ fontSize: "12px", opacity: 0.8 }}>
+            50+ terms with SA context
+          </span>
+        </a>
+      </section>
+
       {/* Module Grid */}
       <section
         style={{

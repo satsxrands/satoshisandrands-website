@@ -1,11 +1,16 @@
 "use client";
 
+import { linkGlossaryTerms } from "@/utils/linkGlossaryTerms";
+
 interface LessonContentProps {
   contentHTML: string;
   title: string;
 }
 
 export function LessonContent({ contentHTML, title }: LessonContentProps) {
+  // Auto-link glossary terms in the content
+  const linkedContent = linkGlossaryTerms(contentHTML);
+
   return (
     <article
       style={{
@@ -15,13 +20,14 @@ export function LessonContent({ contentHTML, title }: LessonContentProps) {
     >
       {/* Article Content */}
       <div
+        className="article-body"
         style={{
           fontSize: "15px",
           fontFamily: "'Nunito', sans-serif",
           lineHeight: 1.7,
           color: "var(--muted)",
         }}
-        dangerouslySetInnerHTML={{ __html: contentHTML }}
+        dangerouslySetInnerHTML={{ __html: linkedContent }}
       />
     </article>
   );

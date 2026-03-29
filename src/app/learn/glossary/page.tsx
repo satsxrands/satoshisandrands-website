@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   glossaryTerms,
   getCategories,
@@ -9,12 +10,29 @@ import {
   type DictTerm,
 } from "@/content/learn/glossary";
 
-export default function GlossaryPage() {
+function GlossaryContent() {
+  const searchParams = useSearchParams();
+  const termParam = searchParams.get("term");
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<
     DictTerm["category"] | "All"
   >("All");
   const [expandedTermId, setExpandedTermId] = useState<string | null>(null);
+
+  // Auto-expand term if URL param provided
+  useEffect(() => {
+    if (termParam) {
+      setExpandedTermId(termParam);
+      // Scroll to the term
+      setTimeout(() => {
+        const element = document.querySelector(`[data-term-id="${termParam}"]`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100);
+    }
+  }, [termParam]);
 
   const categories = getCategories();
   const categoryOptions: (DictTerm["category"] | "All")[] = ["All", ...categories];
@@ -237,6 +255,7 @@ export default function GlossaryPage() {
             {filteredTerms.map((term) => (
               <div
                 key={term.id}
+                data-term-id={term.id}
                 style={{
                   background: "var(--card)",
                   border: "1px solid var(--border)",
@@ -538,5 +557,21 @@ export default function GlossaryPage() {
         </p>
       </footer>
     </main>
+  );
+}
+
+export default function GlossaryPage() {
+  return (
+    <Suspense
+      fallback={
+        <main style={{ background: "var(--bg)", minHeight: "100vh" }}>
+          <div style={{ padding: "60px 40px", textAlign: "center", color: "var(--muted)" }}>
+            Loading glossary...
+          </div>
+        </main>
+      }
+    >
+      <GlossaryContent />
+    </Suspense>
   );
 }

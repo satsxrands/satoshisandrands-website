@@ -119,6 +119,22 @@ body {
 .article-body strong { color: var(--white); font-weight: 900; }
 .article-body a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 .article-body a:hover { color: var(--white); }
+
+/* Glossary term links in content */
+.glossary-link {
+  color: var(--green) !important;
+  font-weight: 700;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+.glossary-link:hover {
+  color: var(--white) !important;
+  background: rgba(6, 214, 160, 0.1);
+  border-radius: 3px;
+  padding: 0 3px;
+}
 .article-body table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-family: var(--font-space-mono), monospace; font-size: 13px; }
 .article-body th { background: var(--surface); color: var(--muted); font-weight: 700; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-family: var(--font-nunito), sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
 .article-body td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--white); }

@@ -494,37 +494,40 @@ function GlossaryContent() {
                             flexWrap: "wrap",
                           }}
                         >
-                          {term.relatedTerms.map((relatedId) => (
-                            <button
-                              key={relatedId}
-                              onClick={() => {
-                                setSearchQuery(relatedId);
-                                setSelectedCategory("All");
-                              }}
-                              style={{
-                                padding: "6px 12px",
-                                background: "rgba(245, 166, 35, 0.1)",
-                                border: "1px solid rgba(245, 166, 35, 0.3)",
-                                borderRadius: "4px",
-                                color: "var(--gold)",
-                                fontSize: "12px",
-                                fontFamily: "'Nunito', sans-serif",
-                                cursor: "pointer",
-                                transition: "all 0.2s",
-                                fontWeight: 600,
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.background = "var(--gold)";
-                                e.currentTarget.style.color = "var(--bg)";
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.background = "rgba(245, 166, 35, 0.1)";
-                                e.currentTarget.style.color = "var(--gold)";
-                              }}
-                            >
-                              {relatedId}
-                            </button>
-                          ))}
+                          {term.relatedTerms.map((relatedId) => {
+                            const relatedTerm = glossaryTerms.find(t => t.id === relatedId);
+                            return (
+                              <a
+                                key={relatedId}
+                                href={`/learn/glossary?term=${relatedId}`}
+                                style={{
+                                  padding: "6px 12px",
+                                  background: "rgba(245, 166, 35, 0.1)",
+                                  border: "1px solid rgba(245, 166, 35, 0.3)",
+                                  borderRadius: "4px",
+                                  color: "var(--gold)",
+                                  fontSize: "12px",
+                                  fontFamily: "'Nunito', sans-serif",
+                                  cursor: "pointer",
+                                  transition: "all 0.2s",
+                                  fontWeight: 600,
+                                  textDecoration: "none",
+                                  display: "inline-block",
+                                }}
+                                title={relatedTerm?.simpleDefinition}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.background = "var(--gold)";
+                                  e.currentTarget.style.color = "var(--bg)";
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.background = "rgba(245, 166, 35, 0.1)";
+                                  e.currentTarget.style.color = "var(--gold)";
+                                }}
+                              >
+                                {relatedId}
+                              </a>
+                            );
+                          })}
                         </div>
                       </div>
                     )}

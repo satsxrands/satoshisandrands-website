@@ -1,7 +1,26 @@
 {
-  "name": "website",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@satoshisandrands/website",
+  "version": "1.0.0",
+  "description": "Educational platform for cryptocurrency, blockchain, and tax resources for South Africa",
+  "private": false,
+  "homepage": "https://satoshisandrands.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SatoshisAndRands/website.git"
+  },
+  "author": "SatoshisAndRands",
+  "license": "MIT",
+  "keywords": [
+    "crypto",
+    "blockchain",
+    "bitcoin",
+    "ethereum",
+    "tax",
+    "sars",
+    "south-africa",
+    "education",
+    "web3"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

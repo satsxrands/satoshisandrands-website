@@ -338,6 +338,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Classifier Promo Banner */}
+      <section
+        style={{
+          padding: "0 40px 40px",
+          maxWidth: 960,
+          margin: "0 auto",
+        }}
+      >
+        <Link
+          href="/tax-tools/classifier"
+          style={{
+            display: "block",
+            background: "rgba(6, 214, 160, 0.08)",
+            border: "1px solid rgba(6, 214, 160, 0.25)",
+            borderRadius: 12,
+            padding: "24px 28px",
+            textDecoration: "none",
+            transition: "background 200ms, border-color 200ms",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
+            <div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-bebas), sans-serif",
+                  fontSize: 20,
+                  letterSpacing: "0.04em",
+                  color: "var(--green)",
+                  marginBottom: 6,
+                  lineHeight: 1,
+                }}
+              >
+                NOT SURE IF YOU'RE AN INVESTOR OR TRADER?
+              </h3>
+              <p
+                style={{
+                  fontFamily: "var(--font-nunito), sans-serif",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "var(--muted)",
+                  lineHeight: 1.5,
+                }}
+              >
+                Take a 2-minute quiz to determine your SARS classification before calculating tax. This answer changes everything.
+              </p>
+            </div>
+            <span
+              style={{
+                fontFamily: "var(--font-nunito), sans-serif",
+                fontSize: 12,
+                fontWeight: 900,
+                color: "var(--green)",
+                letterSpacing: "0.04em",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}
+            >
+              START QUIZ →
+            </span>
+          </div>
+        </Link>
+      </section>
+
       {/* Tax Tools section */}
       <section
         style={{

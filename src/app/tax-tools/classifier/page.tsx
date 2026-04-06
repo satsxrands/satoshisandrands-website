@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const QUESTIONS = [
   {
@@ -255,10 +256,30 @@ export default function ClassifierPage() {
               padding: "10px 14px",
               background: "rgba(255,255,255,0.03)",
               borderRadius: 6,
+              marginBottom: 16,
             }}
           >
             ⚠️ This is a guide only — not a legal determination. SARS assesses each case individually based on facts and intent.
           </p>
+          <Link
+            href="/tax-tools/cgt"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "var(--gold)",
+              color: "#000",
+              fontFamily: "var(--font-nunito), sans-serif",
+              fontSize: 13,
+              fontWeight: 900,
+              padding: "12px 24px",
+              borderRadius: 8,
+              textDecoration: "none",
+              letterSpacing: "0.02em",
+            }}
+          >
+            Now Calculate Your Tax →
+          </Link>
         </div>
       )}
 

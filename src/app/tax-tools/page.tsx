@@ -16,18 +16,19 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    href: "/tax-tools/cgt",
-    icon: <CgtIcon size={32} />,
-    color: "var(--gold)",
-    title: "CGT Calculator",
-    desc: "Calculate your capital gains tax on crypto using SARS 2026/27 brackets. Investor and trader paths.",
-  },
-  {
     href: "/tax-tools/classifier",
     icon: <ClassifierIcon size={32} />,
     color: "var(--green)",
     title: "Trader Classifier",
     desc: "5-question quiz to determine if SARS will treat you as an investor (CGT) or a trader (income tax).",
+    badge: "START HERE",
+  },
+  {
+    href: "/tax-tools/cgt",
+    icon: <CgtIcon size={32} />,
+    color: "var(--gold)",
+    title: "CGT Calculator",
+    desc: "Calculate your capital gains tax on crypto using SARS 2026/27 brackets. Investor and trader paths.",
   },
   {
     href: "/tax-tools/carf",
@@ -77,19 +78,38 @@ export default function TaxToolsIndex() {
             }}
           >
             <span style={{ flexShrink: 0, marginTop: 2, display: "flex" }}>{t.icon}</span>
-            <div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-bebas), sans-serif",
-                  fontSize: 22,
-                  letterSpacing: "0.05em",
-                  color: "var(--white)",
-                  marginBottom: 6,
-                  lineHeight: 1,
-                }}
-              >
-                {t.title}
-              </h3>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-bebas), sans-serif",
+                    fontSize: 22,
+                    letterSpacing: "0.05em",
+                    color: "var(--white)",
+                    lineHeight: 1,
+                    margin: 0,
+                  }}
+                >
+                  {t.title}
+                </h3>
+                {(t as any).badge && (
+                  <span
+                    style={{
+                      fontFamily: "var(--font-nunito), sans-serif",
+                      fontSize: 10,
+                      fontWeight: 900,
+                      color: "var(--green)",
+                      background: "rgba(6, 214, 160, 0.12)",
+                      border: "1px solid rgba(6, 214, 160, 0.25)",
+                      borderRadius: 4,
+                      padding: "3px 8px",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    {(t as any).badge}
+                  </span>
+                )}
+              </div>
               <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13, fontWeight: 600, color: "var(--muted)", lineHeight: 1.5, marginBottom: 10 }}>
                 {t.desc}
               </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const TAX_BRACKETS = [
   { rate: 0.18, label: "18%" },
@@ -178,6 +179,13 @@ export default function CGTPage() {
               </button>
             ))}
           </div>
+          <p style={{ marginTop: 12, fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, color: "var(--muted)", lineHeight: 1.5 }}>
+            Not sure which applies to you?{" "}
+            <Link href="/tax-tools/classifier" style={{ color: "var(--green)", fontWeight: 900, textDecoration: "none" }}>
+              Take the 5-question quiz
+            </Link>{" "}
+            to determine your SARS classification.
+          </p>
         </div>
 
         {/* Marginal tax rate */}
@@ -277,6 +285,28 @@ export default function CGTPage() {
           >
             Estimate only. Does not account for base cost adjustments, fees, or multiple disposals. Not tax advice — consult a registered tax practitioner.
           </p>
+
+          <div style={{ marginTop: 20, padding: "16px", background: "rgba(6,214,160,0.06)", border: "1px solid rgba(6,214,160,0.15)", borderRadius: 8 }}>
+            <p style={{ margin: 0, fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, color: "var(--white)", marginBottom: 8 }}>
+              <strong>Next step:</strong> Verify that your investor/trader classification aligns with SARS criteria.
+            </p>
+            <Link
+              href="/tax-tools/classifier"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                color: "var(--green)",
+                fontFamily: "var(--font-nunito), sans-serif",
+                fontSize: 12,
+                fontWeight: 900,
+                textDecoration: "none",
+                letterSpacing: "0.02em",
+              }}
+            >
+              Review with Classifier Quiz →
+            </Link>
+          </div>
         </div>
       )}
     </div>

@@ -1,0 +1,26 @@
+{
+  "name": "SatoshisAndRands — Crypto Tax Tools for Mzansi",
+  "short_name": "SatoshisAndRands",
+  "description": "Free crypto tax tools for South African crypto holders. CGT Calculator, Trader/Investor Classifier, CARF Compliance Checker.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0D",
+  "theme_color": "#F5A623",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

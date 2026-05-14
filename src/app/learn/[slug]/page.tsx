@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -10,6 +11,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { ModuleOutline } from "@/components/ModuleOutline";
 import { LessonContent } from "@/components/LessonContent";
 import { RelatedModules } from "@/components/RelatedModules";
+import { JsonLd } from "@/components/JsonLd";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -19,6 +21,31 @@ export async function generateStaticParams() {
   return modules.map((module) => ({
     slug: module.slug,
   }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const module = getModuleBySlug(slug);
+  if (!module) return {};
+  const url = `https://satoshisandrands.com/learn/${module.slug}`;
+  return {
+    title: `${module.title} — SatoshisAndRands Learn`,
+    description: module.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: module.title,
+      description: module.description,
+      url,
+      type: "article",
+      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: module.title,
+      description: module.description,
+      images: ["/og-image.png"],
+    },
+  };
 }
 
 const categoryColors: Record<string, string> = {
@@ -43,6 +70,45 @@ export default async function ModuleDetailPage({ params }: Props) {
     day: "numeric",
   });
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: module.title,
+    description: module.description,
+    datePublished: module.publishedAt.toISOString(),
+    dateModified: (module.updatedAt ?? module.publishedAt).toISOString(),
+    author: {
+      "@type": "Organization",
+      name: "SatoshisAndRands",
+      url: "https://satoshisandrands.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SatoshisAndRands",
+      url: "https://satoshisandrands.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://satoshisandrands.com/satslogo.png",
+      },
+    },
+    image: "https://satoshisandrands.com/og-image.png",
+    articleSection: module.category,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://satoshisandrands.com/learn/${module.slug}`,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://satoshisandrands.com" },
+      { "@type": "ListItem", position: 2, name: "Learn", item: "https://satoshisandrands.com/learn" },
+      { "@type": "ListItem", position: 3, name: module.title, item: `https://satoshisandrands.com/learn/${module.slug}` },
+    ],
+  };
+
   return (
     <main
       style={{
@@ -52,6 +118,8 @@ export default async function ModuleDetailPage({ params }: Props) {
         paddingBottom: "80px",
       }}
     >
+      <JsonLd id="learn-article-jsonld" data={articleJsonLd} />
+      <JsonLd id="learn-breadcrumb-jsonld" data={breadcrumbJsonLd} />
       {/* Sticky Breadcrumb */}
       <div
         style={{

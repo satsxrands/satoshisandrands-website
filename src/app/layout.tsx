@@ -1,7 +1,38 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Space_Mono, Nunito } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://satoshisandrands.com/#organization",
+  name: "SatoshisAndRands",
+  alternateName: "Satoshis & Rands",
+  url: "https://satoshisandrands.com",
+  logo: "https://satoshisandrands.com/satslogo.png",
+  description:
+    "South Africa's crypto education and tax-tools platform. Free CGT calculator, trader/investor classifier, CARF compliance checker.",
+  areaServed: { "@type": "Country", name: "South Africa" },
+  sameAs: [
+    "https://instagram.com/satoshisandrands",
+    "https://x.com/satsandrands",
+    "https://www.tiktok.com/@satsxrands",
+    "https://www.facebook.com/profile.php?id=61578408320588",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://satoshisandrands.com/#website",
+  name: "SatoshisAndRands",
+  url: "https://satoshisandrands.com",
+  description: "Crypto tax tools and education for South Africans.",
+  inLanguage: "en-ZA",
+  publisher: { "@id": "https://satoshisandrands.com/#organization" },
+};
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -74,6 +105,8 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${spaceMono.variable} ${nunito.variable} h-full`}
     >
       <body className="min-h-full">
+        <JsonLd id="organization-jsonld" data={organizationJsonLd} />
+        <JsonLd id="website-jsonld" data={websiteJsonLd} />
         {children}
         <Analytics />
       </body>

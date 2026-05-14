@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Crypto Dictionary — Glossary — SatoshisAndRands",
   description:
     "Learn crypto and tax terms with simple and advanced definitions. South African context for Bitcoin, Ethereum, DeFi, security, and SARS tax guidance.",
+  alternates: { canonical: "https://satoshisandrands.com/learn/glossary" },
   openGraph: {
     title: "Crypto Dictionary — SatoshisAndRands",
     description:
@@ -21,6 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Crypto Dictionary — SatoshisAndRands",
+    description:
+      "Searchable glossary of 50+ crypto terms with SA context.",
     images: ["/og-image.png"],
   },
   robots: {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { articles, getArticle } from "@/content/blog/articles";
 import { ShareButton } from "@/components/ShareButton";
+import { JsonLd } from "@/components/JsonLd";
 
 export async function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -55,12 +56,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       logo: { "@type": "ImageObject", url: "https://satoshisandrands.com/satslogo.png" },
     },
     image: "https://satoshisandrands.com/og-image.png",
+    articleSection: article.category,
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://satoshisandrands.com/blog/${article.slug}` },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://satoshisandrands.com" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://satoshisandrands.com/blog" },
+      { "@type": "ListItem", position: 3, name: article.title, item: `https://satoshisandrands.com/blog/${article.slug}` },
+    ],
   };
 
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh", color: "var(--white)" }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd id="blog-article-jsonld" data={jsonLd} />
+      <JsonLd id="blog-breadcrumb-jsonld" data={breadcrumbJsonLd} />
       {/* Nav */}
       <nav style={{ position: "sticky", top: 0, zIndex: 100, height: "var(--topnav-h)", background: "rgba(13,13,13,0.97)", backdropFilter: "blur(12px)", borderBottom: "1px solid var(--border)", display: "flex", alignItems: "center", padding: "0 40px", justifyContent: "space-between" }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>

@@ -2,6 +2,7 @@ import { NdebelePattern } from "@/components/brand/NdebelePattern";
 import { BrandWordmark } from "@/components/brand/BrandWordmark";
 import { HeroPanel } from "@/components/brand/HeroPanel";
 import { ToolCard } from "@/components/brand/ToolCard";
+import { SectionHeader } from "@/components/brand/SectionHeader";
 import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
 
 export const metadata = { robots: { index: false, follow: false } };
@@ -74,6 +75,7 @@ export default function DesignSystemPreview() {
       </section>
       <section id="cards" style={{ marginTop: 48 }}>
         <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em", marginBottom: 16 }}>Tool Cards</h2>
+        <SectionHeader eyebrow="Tools" title="TOOLS & MARKET DATA" />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
           <ToolCard href="/tax-tools/classifier" icon={<ClassifierIcon size={32} />} accent="var(--gold)" title="TRADER CLASSIFIER" desc="5-question quiz: SARS investor vs trader." />
           <ToolCard href="/tax-tools/carf" icon={<CarfIcon size={32} />} accent="var(--red)" title="CARD CHECKER" desc="CARF compliance risk check." />

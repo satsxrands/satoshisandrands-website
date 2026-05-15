@@ -3,6 +3,7 @@ import { BrandWordmark } from "@/components/brand/BrandWordmark";
 import { HeroPanel } from "@/components/brand/HeroPanel";
 import { ToolCard } from "@/components/brand/ToolCard";
 import { SectionHeader } from "@/components/brand/SectionHeader";
+import { PrimaryNav } from "@/components/brand/PrimaryNav";
 import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
 
 export const metadata = { robots: { index: false, follow: false } };
@@ -10,6 +11,7 @@ export const metadata = { robots: { index: false, follow: false } };
 export default function DesignSystemPreview() {
   return (
     <main style={{ background: "var(--bg)", color: "var(--white)", minHeight: "100vh", padding: "48px 32px", fontFamily: "var(--font-nunito)" }}>
+      <PrimaryNav />
       <h1 style={{ fontFamily: "var(--font-bebas)", fontSize: 48, letterSpacing: "0.02em" }}>
         Stitch Redesign — Design System Preview
       </h1>

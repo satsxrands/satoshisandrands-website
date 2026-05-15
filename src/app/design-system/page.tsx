@@ -1,5 +1,6 @@
 import { NdebelePattern } from "@/components/brand/NdebelePattern";
 import { BrandWordmark } from "@/components/brand/BrandWordmark";
+import { HeroPanel } from "@/components/brand/HeroPanel";
 
 export const metadata = { robots: { index: false, follow: false } };
 
@@ -49,7 +50,26 @@ export default function DesignSystemPreview() {
           <BrandWordmark size="md" stacked={false} />
         </div>
       </section>
-      <section id="hero" style={{ marginTop: 48 }}>Hero — placeholder</section>
+      <section id="hero" style={{ marginTop: 48 }}>
+        <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em", marginBottom: 16 }}>Hero Panel</h2>
+        <div style={{ border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
+          <HeroPanel
+            left={<BrandWordmark size="xl" />}
+            right={
+              <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
+                <div style={{ fontFamily: "var(--font-bebas)", fontSize: 32, letterSpacing: "0.02em" }}>CGT CALCULATOR</div>
+                <div style={{ color: "var(--muted)", marginTop: 8, fontSize: 13 }}>Calculate your South African CGT in seconds.</div>
+                <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 8, padding: 12, marginTop: 16, color: "var(--muted)", fontFamily: "var(--font-space-mono)", fontSize: 12 }}>
+                  Enter Gain (ZAR)
+                </div>
+                <button style={{ background: "var(--gold)", color: "var(--bg)", border: "none", borderRadius: "var(--radius-pill)", padding: "12px 24px", marginTop: 16, fontFamily: "var(--font-bebas)", fontSize: 16, letterSpacing: "0.08em", cursor: "pointer" }}>
+                  CALCULATE NOW
+                </button>
+              </div>
+            }
+          />
+        </div>
+      </section>
       <section id="cards" style={{ marginTop: 48 }}>Tool cards — placeholder</section>
       <section id="nav" style={{ marginTop: 48 }}>Primary nav — placeholder</section>
     </main>

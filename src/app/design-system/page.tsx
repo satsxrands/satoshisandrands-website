@@ -1,4 +1,5 @@
 import { NdebelePattern } from "@/components/brand/NdebelePattern";
+import { BrandWordmark } from "@/components/brand/BrandWordmark";
 
 export const metadata = { robots: { index: false, follow: false } };
 
@@ -37,6 +38,15 @@ export default function DesignSystemPreview() {
               <div style={{ position: "absolute", bottom: 8, left: 12, fontFamily: "var(--font-space-mono)", fontSize: 11, color: "var(--muted)" }}>opacity={op}</div>
             </div>
           ))}
+        </div>
+      </section>
+      <section id="wordmark" style={{ marginTop: 48 }}>
+        <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em" }}>Wordmark</h2>
+        <div style={{ display: "flex", gap: 48, alignItems: "flex-end", marginTop: 16 }}>
+          <BrandWordmark size="sm" />
+          <BrandWordmark size="md" />
+          <BrandWordmark size="xl" />
+          <BrandWordmark size="md" stacked={false} />
         </div>
       </section>
       <section id="hero" style={{ marginTop: 48 }}>Hero — placeholder</section>

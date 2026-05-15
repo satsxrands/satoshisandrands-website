@@ -1,3 +1,5 @@
+import { NdebelePattern } from "@/components/brand/NdebelePattern";
+
 export const metadata = { robots: { index: false, follow: false } };
 
 export default function DesignSystemPreview() {
@@ -26,7 +28,17 @@ export default function DesignSystemPreview() {
           ))}
         </div>
       </section>
-      <section id="pattern" style={{ marginTop: 48 }}>Pattern — placeholder</section>
+      <section id="pattern" style={{ marginTop: 48 }}>
+        <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em" }}>Ndebele Pattern</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginTop: 16 }}>
+          {[0.08, 0.12, 0.20].map((op) => (
+            <div key={op} style={{ position: "relative", height: 200, background: "var(--bg)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
+              <NdebelePattern opacity={op} />
+              <div style={{ position: "absolute", bottom: 8, left: 12, fontFamily: "var(--font-space-mono)", fontSize: 11, color: "var(--muted)" }}>opacity={op}</div>
+            </div>
+          ))}
+        </div>
+      </section>
       <section id="hero" style={{ marginTop: 48 }}>Hero — placeholder</section>
       <section id="cards" style={{ marginTop: 48 }}>Tool cards — placeholder</section>
       <section id="nav" style={{ marginTop: 48 }}>Primary nav — placeholder</section>

@@ -12,6 +12,20 @@
   --border: #2A2A2A;
   --sidebar-w: 240px;
   --topnav-h: 60px;
+  /* Stitch redesign — added 2026-05-15 */
+  --gold-hi: #FFC04A;
+  --gold-lo: #B8761A;
+  --accent-blue: #627EEA;
+  --accent-purple: #8B5CF6;
+  --card-border: rgba(245, 166, 35, 0.18);
+  --card-border-hover: rgba(245, 166, 35, 0.45);
+  --pattern-opacity: 0.12;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 24px rgba(0,0,0,0.35);
+  --motion-fast: 140ms;
+  --motion-base: 220ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
 *, *::before, *::after {

@@ -86,6 +86,44 @@ export default function DesignSystemPreview() {
         </div>
       </section>
       <section id="nav" style={{ marginTop: 48 }}>Primary nav — placeholder</section>
+      <section id="mockup-recreation" style={{ marginTop: 96 }}>
+        <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em", marginBottom: 16 }}>
+          Full Mockup Recreation
+        </h2>
+        <div style={{ border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
+          <HeroPanel
+            left={<BrandWordmark size="xl" />}
+            right={
+              <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
+                <div style={{ fontFamily: "var(--font-bebas)", fontSize: 32, letterSpacing: "0.02em" }}>CGT CALCULATOR</div>
+                <div style={{ color: "var(--muted)", marginTop: 8, fontSize: 13 }}>Calculate your South African CGT in seconds.</div>
+                <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 8, padding: 12, marginTop: 16, color: "var(--muted)", fontFamily: "var(--font-space-mono)", fontSize: 12 }}>Enter Gain (ZAR)</div>
+                <button style={{ background: "var(--gold)", color: "var(--bg)", border: "none", borderRadius: "var(--radius-pill)", padding: "12px 24px", marginTop: 16, fontFamily: "var(--font-bebas)", fontSize: 16, letterSpacing: "0.08em" }}>CALCULATE NOW</button>
+              </div>
+            }
+          />
+          <div style={{ padding: "64px 32px", background: "var(--surface)" }}>
+            <SectionHeader eyebrow="Tools" title="TOOLS & MARKET DATA" />
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, maxWidth: 1200, margin: "0 auto" }}>
+              <ToolCard href="/tax-tools/classifier" icon={<ClassifierIcon size={32} />} accent="var(--gold)" title="TRADER CLASSIFIER" desc="5-question quiz: SARS investor vs trader." />
+              <ToolCard href="/tax-tools/carf" icon={<CarfIcon size={32} />} accent="var(--red)" title="CARD CHECKER" desc="CARF compliance risk check." />
+              <ToolCard href="/market" icon={<CgtIcon size={32} />} accent="var(--accent-blue)" title="LIVE MARKET DATA" desc="BTC/ZAR, ETH/ZAR, SOL — live." />
+              <ToolCard href="/news" icon={<CgtIcon size={32} />} accent="var(--green)" title="SA CRYPTO NEWS" desc="Sentiment-scored headlines." />
+            </div>
+          </div>
+          <div style={{ padding: "64px 32px", background: "var(--bg)", textAlign: "center" }}>
+            <SectionHeader eyebrow="Platform" title="THE FULL PLATFORM" />
+            <div style={{ display: "inline-block", background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 24, marginTop: 8 }}>
+              <div style={{ fontFamily: "var(--font-bebas)", fontSize: 20, letterSpacing: "0.04em" }}>EDUCATION HUB</div>
+              <div style={{ color: "var(--muted)", fontSize: 13, marginTop: 8 }}>Crypto 101, SARS guides, beginner to advanced.</div>
+            </div>
+          </div>
+          <footer style={{ padding: "32px", borderTop: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <BrandWordmark size="sm" stacked={false} />
+            <div style={{ color: "var(--muted)", fontFamily: "var(--font-space-mono)", fontSize: 11 }}>© 2026 SatoshisAndRands</div>
+          </footer>
+        </div>
+      </section>
     </main>
   );
 }

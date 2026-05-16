@@ -1,74 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
-
-const tools = [
-  {
-    href: "/tax-tools/cgt",
-    icon: <CgtIcon size={36} />,
-    color: "var(--gold)",
-    title: "CGT Calculator",
-    desc: "Calculate your capital gains tax on crypto using SARS 2026/27 brackets. Investor and trader paths.",
-  },
-  {
-    href: "/tax-tools/classifier",
-    icon: <ClassifierIcon size={36} />,
-    color: "var(--green)",
-    title: "Trader Classifier",
-    desc: "5-question quiz to determine if SARS will treat you as an investor (CGT) or a trader (income tax).",
-  },
-  {
-    href: "/tax-tools/carf",
-    icon: <CarfIcon size={36} />,
-    color: "var(--red)",
-    title: "CARF Checker",
-    desc: "Check your CARF compliance risk. SA exchanges report to SARS — find out where you stand.",
-  },
-  {
-    href: "/market",
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="4,22 10,14 16,18 24,8 28,12" stroke="#627EEA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <polyline points="4,22 10,14 16,18 24,8 28,12 28,28 4,28" stroke="none" fill="#627EEA" fillOpacity="0.12" />
-        <circle cx="28" cy="12" r="2.5" fill="#627EEA" />
-      </svg>
-    ),
-    color: "#627EEA",
-    title: "Live Market Data",
-    desc: "BTC/ZAR, ETH/ZAR, SOL, XRP, BNB — live prices refreshed every 60 seconds via CoinMarketCap.",
-  },
-  {
-    href: "/news",
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="4" y="6" width="24" height="20" rx="3" fill="#06D6A0" fillOpacity="0.12" stroke="#06D6A0" strokeWidth="1.5" />
-        <line x1="9" y1="12" x2="23" y2="12" stroke="#06D6A0" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="9" y1="16" x2="23" y2="16" stroke="#06D6A0" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
-        <line x1="9" y1="20" x2="17" y2="20" stroke="#06D6A0" strokeWidth="1.5" strokeLinecap="round" opacity="0.35" />
-        <circle cx="24" cy="8" r="4" fill="#1C1C1C" />
-        <circle cx="24" cy="8" r="4" fill="#06D6A0" fillOpacity="0.25" stroke="#06D6A0" strokeWidth="1.2" />
-        <circle cx="24" cy="8" r="1.8" fill="#06D6A0" />
-      </svg>
-    ),
-    color: "var(--green)",
-    title: "SA Crypto News",
-    desc: "Live crypto news with SA relevance. Sentiment-scored headlines updated every 15 minutes.",
-  },
-];
-
-const upcoming = [
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4,13 L16,7 L28,13 L16,19 Z" fill="#888" fillOpacity="0.5" stroke="#888" strokeWidth="1.2" strokeLinejoin="round" />
-        <path d="M9,16 L9,23 C9,23 12,26 16,26 C20,26 23,23 23,23 L23,16" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <line x1="28" y1="13" x2="28" y2="21" stroke="#888" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
-      </svg>
-    ),
-    label: "Education Hub",
-    desc: "Crypto 101, SARS guides, beginner to advanced",
-  },
-];
+import { NdebelePattern } from "@/components/brand/NdebelePattern";
+import { BrandWordmark } from "@/components/brand/BrandWordmark";
+import { SectionHeader } from "@/components/brand/SectionHeader";
+import { ToolCard } from "@/components/brand/ToolCard";
+import { homepageTools } from "@/lib/homepage-tools";
 
 export default function Home() {
   return (
@@ -166,182 +102,57 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero */}
-      <section
-        className="hero-section"
-        style={{
-          padding: "100px 40px 80px",
-          maxWidth: 960,
-          margin: "0 auto",
-          textAlign: "center",
-        }}
-      >
-        {/* Logo */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: 32 }}>
-          <Image
-            src="/satslogo.png"
-            alt="SatoshisAndRands"
-            width={120}
-            height={120}
-            style={{ borderRadius: "50%", boxShadow: "0 0 40px rgba(245,166,35,0.2)" }}
-            priority
-          />
+      {/* Hero — Stitch v2 */}
+      <section className="v2-hero" style={{ position: "relative", overflow: "hidden", background: "var(--bg)" }}>
+        <NdebelePattern opacity={0.7} />
+        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "0 auto", padding: "96px 32px 80px" }}>
+          <div>
+            <BrandWordmark size="hero" />
+            <p style={{ marginTop: 24, color: "var(--muted)", fontSize: 18, lineHeight: 1.5, maxWidth: 420, fontFamily: "var(--font-nunito)" }}>
+              South Africa&apos;s crypto tax tools and education hub. Built for SARS — in rands, plain English, free.
+            </p>
+          </div>
+          <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
+            <div style={{ fontFamily: "var(--font-bebas)", fontSize: 32, letterSpacing: "0.02em", color: "var(--white)" }}>CGT CALCULATOR</div>
+            <div style={{ color: "var(--muted)", marginTop: 8, fontSize: 13 }}>Calculate your South African CGT in seconds.</div>
+            <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 8, padding: 12, marginTop: 16, color: "var(--muted)", fontFamily: "var(--font-space-mono)", fontSize: 12 }}>
+              Enter Gain (ZAR)
+            </div>
+            <Link href="/tax-tools/cgt" style={{ display: "inline-block", background: "var(--gold)", color: "var(--bg)", textDecoration: "none", borderRadius: "var(--radius-pill)", padding: "12px 24px", marginTop: 16, fontFamily: "var(--font-bebas)", fontSize: 16, letterSpacing: "0.08em" }}>
+              CALCULATE NOW
+            </Link>
+          </div>
         </div>
+      </section>
 
-        {/* Eyebrow */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            background: "rgba(245,166,35,0.1)",
-            border: "1px solid rgba(245,166,35,0.25)",
-            borderRadius: 20,
-            padding: "5px 16px",
-            marginBottom: 28,
-          }}
-          className="eyebrow-badge"
-        >
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--gold)", display: "inline-block" }} />
-          <span
-            style={{
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 12,
-              fontWeight: 900,
-              color: "var(--gold)",
-              letterSpacing: "0.1em",
-            }}
-          >
-            SOUTH AFRICA&apos;S CRYPTO EDUCATION PLATFORM
-          </span>
-        </div>
-
-        <h1
-          style={{
-            fontFamily: "var(--font-bebas), sans-serif",
-            fontSize: "clamp(52px, 8vw, 88px)",
-            letterSpacing: "0.03em",
-            lineHeight: 0.95,
-            color: "var(--white)",
-            marginBottom: 24,
-          }}
-        >
-          CRYPTO IN RANDS.{" "}
-          <span style={{ color: "var(--gold)" }}>TAX IN PLAIN ENGLISH.</span>
-        </h1>
-
-        <p
-          style={{
-            fontFamily: "var(--font-nunito), sans-serif",
-            fontSize: 18,
-            fontWeight: 600,
-            color: "var(--muted)",
-            maxWidth: 580,
-            margin: "0 auto 40px",
-            lineHeight: 1.6,
-          }}
-        >
-          Free tools, real numbers, no jargon. Built for South African crypto holders who want to understand SARS, CGT, and CARF — without the confusion.
-        </p>
-
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <Link
-            href="/tax-tools/cgt"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "var(--gold)",
-              color: "#000",
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 14,
-              fontWeight: 900,
-              padding: "14px 28px",
-              borderRadius: 10,
-              textDecoration: "none",
-              letterSpacing: "0.02em",
-            }}
-          >
-            Try the Tax Tools →
-          </Link>
-          <a
-            href="https://instagram.com/satoshisandrands"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "transparent",
-              color: "var(--white)",
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 14,
-              fontWeight: 900,
-              padding: "14px 28px",
-              borderRadius: 10,
-              textDecoration: "none",
-              border: "1px solid var(--border)",
-            }}
-          >
-            Follow on Instagram
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=61578408320588"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "transparent",
-              color: "var(--white)",
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 14,
-              fontWeight: 900,
-              padding: "14px 28px",
-              borderRadius: 10,
-              textDecoration: "none",
-              border: "1px solid var(--border)",
-            }}
-          >
-            Follow on Facebook
-          </a>
-        </div>
-
-        {/* Trust strip */}
-        <div
-          style={{
-            marginTop: 48,
-            display: "flex",
-            gap: 28,
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          {["Free — no signup", "No data stored", "SARS 2026/27 brackets", "Built for Mzansi"].map((item) => (
-            <span
-              key={item}
-              style={{
-                fontFamily: "var(--font-nunito), sans-serif",
-                fontSize: 12,
-                fontWeight: 800,
-                color: "var(--muted)",
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-              }}
-            >
-              <span style={{ color: "var(--green)" }}>✓</span>
-              {item}
-            </span>
+      {/* Tools — Stitch v2 */}
+      <section className="v2-tools" style={{ padding: "64px 32px", background: "var(--surface)" }}>
+        <SectionHeader eyebrow="Tools" title="TOOLS & MARKET DATA" />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, maxWidth: 1200, margin: "0 auto" }}>
+          {homepageTools.map((t) => (
+            <ToolCard key={t.href} href={t.href} icon={t.icon} accent={t.accent} title={t.title} desc={t.desc} />
           ))}
         </div>
       </section>
 
-      {/* Classifier Promo Banner */}
+      {/* Full Platform — Stitch v2 */}
+      <section className="v2-platform" style={{ padding: "64px 32px", background: "var(--bg)" }}>
+        <SectionHeader eyebrow="Platform" title="THE FULL PLATFORM" />
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "24px auto 0" }}>
+          <div><BrandWordmark size="xl" /></div>
+          <Link href="/learn" style={{ textDecoration: "none", color: "inherit" }}>
+            <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
+              <div style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em", color: "var(--white)" }}>EDUCATION HUB</div>
+              <div style={{ color: "var(--muted)", fontSize: 14, marginTop: 12, lineHeight: 1.5 }}>Crypto 101, SARS guides, beginner to advanced.</div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Classifier Promo Banner — preserved secondary lane */}
       <section
         style={{
-          padding: "0 40px 40px",
+          padding: "40px 40px 80px",
           maxWidth: 960,
           margin: "0 auto",
         }}
@@ -370,7 +181,7 @@ export default function Home() {
                   lineHeight: 1,
                 }}
               >
-                NOT SURE IF YOU'RE AN INVESTOR OR TRADER?
+                NOT SURE IF YOU&apos;RE AN INVESTOR OR TRADER?
               </h3>
               <p
                 style={{
@@ -399,179 +210,6 @@ export default function Home() {
             </span>
           </div>
         </Link>
-      </section>
-
-      {/* Tax Tools section */}
-      <section
-        style={{
-          padding: "0 40px 80px",
-          maxWidth: 960,
-          margin: "0 auto",
-        }}
-      >
-        <div style={{ marginBottom: 36 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 11,
-              fontWeight: 900,
-              color: "var(--gold)",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              marginBottom: 8,
-            }}
-          >
-            Free Tools — Live Now
-          </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas), sans-serif",
-              fontSize: 38,
-              letterSpacing: "0.04em",
-              color: "var(--white)",
-            }}
-          >
-            TOOLS & MARKET DATA
-          </h2>
-        </div>
-
-        <div className="tools-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-          {tools.map((t) => (
-            <Link
-              key={t.href}
-              href={t.href}
-              style={{
-                display: "block",
-                background: "var(--card)",
-                border: "1px solid var(--border)",
-                borderLeft: `3px solid ${t.color}`,
-                borderRadius: 12,
-                padding: 24,
-                textDecoration: "none",
-                transition: "border-color 200ms, background 200ms",
-              }}
-            >
-              <div style={{ marginBottom: 14 }}>{t.icon}</div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-bebas), sans-serif",
-                  fontSize: 22,
-                  letterSpacing: "0.05em",
-                  color: "var(--white)",
-                  marginBottom: 8,
-                }}
-              >
-                {t.title}
-              </h3>
-              <p
-                style={{
-                  fontFamily: "var(--font-nunito), sans-serif",
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: "var(--muted)",
-                  lineHeight: 1.6,
-                  marginBottom: 16,
-                }}
-              >
-                {t.desc}
-              </p>
-              <span
-                style={{
-                  fontFamily: "var(--font-nunito), sans-serif",
-                  fontSize: 12,
-                  fontWeight: 900,
-                  color: t.color,
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Open tool →
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 40px" }}>
-        <div style={{ borderTop: "1px solid var(--border)" }} />
-      </div>
-
-      {/* Coming soon section */}
-      <section
-        style={{
-          padding: "60px 40px 80px",
-          maxWidth: 960,
-          margin: "0 auto",
-        }}
-      >
-        <div style={{ marginBottom: 36 }}>
-          <span
-            style={{
-              display: "inline-block",
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 11,
-              fontWeight: 900,
-              color: "var(--muted)",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              background: "var(--surface)",
-              border: "1px solid var(--border)",
-              borderRadius: 20,
-              padding: "4px 14px",
-              marginBottom: 12,
-            }}
-          >
-            Coming Soon
-          </span>
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas), sans-serif",
-              fontSize: 38,
-              letterSpacing: "0.04em",
-              color: "var(--white)",
-            }}
-          >
-            THE FULL PLATFORM
-          </h2>
-        </div>
-
-        <div className="upcoming-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
-          {upcoming.map((u) => (
-            <div
-              key={u.label}
-              style={{
-                background: "var(--surface)",
-                border: "1px solid var(--border)",
-                borderRadius: 12,
-                padding: 24,
-                opacity: 0.6,
-              }}
-            >
-              <div style={{ marginBottom: 12 }}>{u.icon}</div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-nunito), sans-serif",
-                  fontSize: 15,
-                  fontWeight: 900,
-                  color: "var(--white)",
-                  marginBottom: 6,
-                }}
-              >
-                {u.label}
-              </h3>
-              <p
-                style={{
-                  fontFamily: "var(--font-nunito), sans-serif",
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: "var(--muted)",
-                }}
-              >
-                {u.desc}
-              </p>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* Footer */}

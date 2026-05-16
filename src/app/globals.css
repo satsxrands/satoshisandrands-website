@@ -154,3 +154,13 @@ body {
 .article-body th { background: var(--surface); color: var(--muted); font-weight: 700; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-family: var(--font-nunito), sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
 .article-body td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--white); }
 .article-body tr:last-child td { border-bottom: none; }
+
+/* Stitch v2 mobile polish */
+@media (max-width: 768px) {
+  .v2-hero > div { grid-template-columns: 1fr !important; gap: 32px !important; padding: 48px 20px !important; }
+  .v2-tools > div { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  .v2-platform > div { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+@media (max-width: 480px) {
+  .v2-tools > div { grid-template-columns: 1fr !important; }
+}

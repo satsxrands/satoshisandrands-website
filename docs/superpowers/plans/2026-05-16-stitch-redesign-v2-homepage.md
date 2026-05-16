@@ -1,5 +1,7 @@
 # Stitch Redesign v2 — Homepage Migration Implementation Plan
 
+> **STATUS: ✅ COMPLETE (2026-05-16).** All tasks shipped on `redesign/stitch-foundation`. Commits: `d5ebeac` (T1 data extract), `cdff060` (T2 hero swap), `a69a114` (T3+T4 tools grid + Full Platform + Classifier promo preserved as secondary lane = T5), `9493e59` (T7 mobile responsive). T6 verification: `npx next build` clean; lint errors present only in out-of-scope files (`/learn/*`, `/tax-tools/page.tsx`, `LessonContent`, `modules.ts`) — none in redesign surface. Homepage 613 → 251 lines.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Migrate `src/app/page.tsx` (the SatoshisAndRands homepage at `/`) from the current content-first marketing layout to the tools-first Stitch-mockup layout, using the brand library already shipped to `redesign/stitch-foundation`.

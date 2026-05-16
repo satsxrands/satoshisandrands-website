@@ -105,17 +105,6 @@ export default function Home() {
       {/* Hero — Stitch v2 */}
       <section className="v2-hero" style={{ position: "relative", overflow: "hidden", background: "var(--bg)" }}>
         <NdebelePattern opacity={0.15} />
-        {/* Dark scrim — radial vignette behind text column so wordmark + subhead stay legible over pattern */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(ellipse 60% 80% at 25% 50%, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.75) 40%, rgba(13,13,13,0) 75%)",
-            pointerEvents: "none",
-          }}
-        />
         <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "0 auto", padding: "96px 32px 80px" }}>
           <div>
             <BrandWordmark size="hero" />
@@ -149,9 +138,11 @@ export default function Home() {
       {/* Full Platform — Stitch v2 */}
       <section className="v2-platform" style={{ padding: "64px 32px", background: "var(--bg)" }}>
         <SectionHeader eyebrow="Platform" title="THE FULL PLATFORM" />
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "24px auto 0" }}>
-          <div style={{ display: "flex", justifyContent: "center" }}><BrandWordmark size="xl" /></div>
-          <Link href="/learn" style={{ textDecoration: "none", color: "inherit" }}>
+        <p style={{ maxWidth: 560, margin: "16px auto 0", textAlign: "center", color: "var(--muted)", fontFamily: "var(--font-nunito)", fontSize: 15, lineHeight: 1.6 }}>
+          Beyond the tools — a free education hub built for South African crypto holders.
+        </p>
+        <div style={{ maxWidth: 720, margin: "32px auto 0" }}>
+          <Link href="/learn" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
             <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
               <div style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em", color: "var(--white)" }}>EDUCATION HUB</div>
               <div style={{ color: "var(--muted)", fontSize: 14, marginTop: 12, lineHeight: 1.5 }}>Crypto 101, SARS guides, beginner to advanced.</div>

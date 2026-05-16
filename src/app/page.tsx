@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
+import { NdebelePattern } from "@/components/brand/NdebelePattern";
+import { BrandWordmark } from "@/components/brand/BrandWordmark";
 
 const tools = [
   {
@@ -166,175 +168,26 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero */}
-      <section
-        className="hero-section"
-        style={{
-          padding: "100px 40px 80px",
-          maxWidth: 960,
-          margin: "0 auto",
-          textAlign: "center",
-        }}
-      >
-        {/* Logo */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: 32 }}>
-          <Image
-            src="/satslogo.png"
-            alt="SatoshisAndRands"
-            width={120}
-            height={120}
-            style={{ borderRadius: "50%", boxShadow: "0 0 40px rgba(245,166,35,0.2)" }}
-            priority
-          />
-        </div>
-
-        {/* Eyebrow */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            background: "rgba(245,166,35,0.1)",
-            border: "1px solid rgba(245,166,35,0.25)",
-            borderRadius: 20,
-            padding: "5px 16px",
-            marginBottom: 28,
-          }}
-          className="eyebrow-badge"
-        >
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--gold)", display: "inline-block" }} />
-          <span
-            style={{
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 12,
-              fontWeight: 900,
-              color: "var(--gold)",
-              letterSpacing: "0.1em",
-            }}
-          >
-            SOUTH AFRICA&apos;S CRYPTO EDUCATION PLATFORM
-          </span>
-        </div>
-
-        <h1
-          style={{
-            fontFamily: "var(--font-bebas), sans-serif",
-            fontSize: "clamp(52px, 8vw, 88px)",
-            letterSpacing: "0.03em",
-            lineHeight: 0.95,
-            color: "var(--white)",
-            marginBottom: 24,
-          }}
-        >
-          CRYPTO IN RANDS.{" "}
-          <span style={{ color: "var(--gold)" }}>TAX IN PLAIN ENGLISH.</span>
-        </h1>
-
-        <p
-          style={{
-            fontFamily: "var(--font-nunito), sans-serif",
-            fontSize: 18,
-            fontWeight: 600,
-            color: "var(--muted)",
-            maxWidth: 580,
-            margin: "0 auto 40px",
-            lineHeight: 1.6,
-          }}
-        >
-          Free tools, real numbers, no jargon. Built for South African crypto holders who want to understand SARS, CGT, and CARF — without the confusion.
-        </p>
-
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-          <Link
-            href="/tax-tools/cgt"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "var(--gold)",
-              color: "#000",
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 14,
-              fontWeight: 900,
-              padding: "14px 28px",
-              borderRadius: 10,
-              textDecoration: "none",
-              letterSpacing: "0.02em",
-            }}
-          >
-            Try the Tax Tools →
-          </Link>
-          <a
-            href="https://instagram.com/satoshisandrands"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "transparent",
-              color: "var(--white)",
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 14,
-              fontWeight: 900,
-              padding: "14px 28px",
-              borderRadius: 10,
-              textDecoration: "none",
-              border: "1px solid var(--border)",
-            }}
-          >
-            Follow on Instagram
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=61578408320588"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "transparent",
-              color: "var(--white)",
-              fontFamily: "var(--font-nunito), sans-serif",
-              fontSize: 14,
-              fontWeight: 900,
-              padding: "14px 28px",
-              borderRadius: 10,
-              textDecoration: "none",
-              border: "1px solid var(--border)",
-            }}
-          >
-            Follow on Facebook
-          </a>
-        </div>
-
-        {/* Trust strip */}
-        <div
-          style={{
-            marginTop: 48,
-            display: "flex",
-            gap: 28,
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          {["Free — no signup", "No data stored", "SARS 2026/27 brackets", "Built for Mzansi"].map((item) => (
-            <span
-              key={item}
-              style={{
-                fontFamily: "var(--font-nunito), sans-serif",
-                fontSize: 12,
-                fontWeight: 800,
-                color: "var(--muted)",
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-              }}
-            >
-              <span style={{ color: "var(--green)" }}>✓</span>
-              {item}
-            </span>
-          ))}
+      {/* Hero — Stitch v2 */}
+      <section style={{ position: "relative", overflow: "hidden", background: "var(--bg)" }}>
+        <NdebelePattern opacity={0.7} />
+        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "0 auto", padding: "96px 32px 80px" }}>
+          <div>
+            <BrandWordmark size="hero" />
+            <p style={{ marginTop: 24, color: "var(--muted)", fontSize: 18, lineHeight: 1.5, maxWidth: 420, fontFamily: "var(--font-nunito)" }}>
+              South Africa&apos;s crypto tax tools and education hub. Built for SARS — in rands, plain English, free.
+            </p>
+          </div>
+          <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
+            <div style={{ fontFamily: "var(--font-bebas)", fontSize: 32, letterSpacing: "0.02em", color: "var(--white)" }}>CGT CALCULATOR</div>
+            <div style={{ color: "var(--muted)", marginTop: 8, fontSize: 13 }}>Calculate your South African CGT in seconds.</div>
+            <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 8, padding: 12, marginTop: 16, color: "var(--muted)", fontFamily: "var(--font-space-mono)", fontSize: 12 }}>
+              Enter Gain (ZAR)
+            </div>
+            <Link href="/tax-tools/cgt" style={{ display: "inline-block", background: "var(--gold)", color: "var(--bg)", textDecoration: "none", borderRadius: "var(--radius-pill)", padding: "12px 24px", marginTop: 16, fontFamily: "var(--font-bebas)", fontSize: 16, letterSpacing: "0.08em" }}>
+              CALCULATE NOW
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -103,7 +103,7 @@ export default function Home() {
       </nav>
 
       {/* Hero — Stitch v2 */}
-      <section style={{ position: "relative", overflow: "hidden", background: "var(--bg)" }}>
+      <section className="v2-hero" style={{ position: "relative", overflow: "hidden", background: "var(--bg)" }}>
         <NdebelePattern opacity={0.7} />
         <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "0 auto", padding: "96px 32px 80px" }}>
           <div>

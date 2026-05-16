@@ -4,7 +4,7 @@ import { HeroPanel } from "@/components/brand/HeroPanel";
 import { ToolCard } from "@/components/brand/ToolCard";
 import { SectionHeader } from "@/components/brand/SectionHeader";
 import { PrimaryNav } from "@/components/brand/PrimaryNav";
-import { CgtIcon, ClassifierIcon, CarfIcon } from "@/components/TaxToolIcons";
+import { CgtIcon, ClassifierIcon, CarfIcon, NewsIcon } from "@/components/TaxToolIcons";
 
 export const metadata = { robots: { index: false, follow: false } };
 
@@ -59,7 +59,7 @@ export default function DesignSystemPreview() {
         <h2 style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em", marginBottom: 16 }}>Hero Panel</h2>
         <div style={{ border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
           <HeroPanel
-            left={<BrandWordmark size="xl" />}
+            left={<BrandWordmark size="hero" />}
             right={
               <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
                 <div style={{ fontFamily: "var(--font-bebas)", fontSize: 32, letterSpacing: "0.02em" }}>CGT CALCULATOR</div>
@@ -82,7 +82,7 @@ export default function DesignSystemPreview() {
           <ToolCard href="/tax-tools/classifier" icon={<ClassifierIcon size={32} />} accent="var(--gold)" title="TRADER CLASSIFIER" desc="5-question quiz: SARS investor vs trader." />
           <ToolCard href="/tax-tools/carf" icon={<CarfIcon size={32} />} accent="var(--red)" title="CARD CHECKER" desc="CARF compliance risk check." />
           <ToolCard href="/market" icon={<CgtIcon size={32} />} accent="var(--accent-blue)" title="LIVE MARKET DATA" desc="BTC/ZAR, ETH/ZAR, SOL — live." />
-          <ToolCard href="/news" icon={<CgtIcon size={32} />} accent="var(--green)" title="SA CRYPTO NEWS" desc="Sentiment-scored headlines." />
+          <ToolCard href="/news" icon={<NewsIcon size={32} />} accent="var(--green)" title="SA CRYPTO NEWS" desc="Sentiment-scored headlines." />
         </div>
       </section>
       <section id="nav" style={{ marginTop: 48 }}>Primary nav — placeholder</section>
@@ -92,7 +92,7 @@ export default function DesignSystemPreview() {
         </h2>
         <div style={{ border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
           <HeroPanel
-            left={<BrandWordmark size="xl" />}
+            left={<BrandWordmark size="hero" />}
             right={
               <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
                 <div style={{ fontFamily: "var(--font-bebas)", fontSize: 32, letterSpacing: "0.02em" }}>CGT CALCULATOR</div>
@@ -108,14 +108,17 @@ export default function DesignSystemPreview() {
               <ToolCard href="/tax-tools/classifier" icon={<ClassifierIcon size={32} />} accent="var(--gold)" title="TRADER CLASSIFIER" desc="5-question quiz: SARS investor vs trader." />
               <ToolCard href="/tax-tools/carf" icon={<CarfIcon size={32} />} accent="var(--red)" title="CARD CHECKER" desc="CARF compliance risk check." />
               <ToolCard href="/market" icon={<CgtIcon size={32} />} accent="var(--accent-blue)" title="LIVE MARKET DATA" desc="BTC/ZAR, ETH/ZAR, SOL — live." />
-              <ToolCard href="/news" icon={<CgtIcon size={32} />} accent="var(--green)" title="SA CRYPTO NEWS" desc="Sentiment-scored headlines." />
+              <ToolCard href="/news" icon={<NewsIcon size={32} />} accent="var(--green)" title="SA CRYPTO NEWS" desc="Sentiment-scored headlines." />
             </div>
           </div>
-          <div style={{ padding: "64px 32px", background: "var(--bg)", textAlign: "center" }}>
+          <div style={{ padding: "64px 32px", background: "var(--bg)" }}>
             <SectionHeader eyebrow="Platform" title="THE FULL PLATFORM" />
-            <div style={{ display: "inline-block", background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 24, marginTop: 8 }}>
-              <div style={{ fontFamily: "var(--font-bebas)", fontSize: 20, letterSpacing: "0.04em" }}>EDUCATION HUB</div>
-              <div style={{ color: "var(--muted)", fontSize: 13, marginTop: 8 }}>Crypto 101, SARS guides, beginner to advanced.</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "24px auto 0" }}>
+              <div><BrandWordmark size="xl" /></div>
+              <div style={{ background: "var(--card)", border: "1px solid var(--card-border)", borderRadius: "var(--radius-card)", padding: 32, boxShadow: "var(--shadow-card)" }}>
+                <div style={{ fontFamily: "var(--font-bebas)", fontSize: 28, letterSpacing: "0.04em" }}>EDUCATION HUB</div>
+                <div style={{ color: "var(--muted)", fontSize: 14, marginTop: 12, lineHeight: 1.5 }}>Crypto 101, SARS guides, beginner to advanced.</div>
+              </div>
             </div>
           </div>
           <footer style={{ padding: "32px", borderTop: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>

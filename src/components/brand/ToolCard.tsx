@@ -23,7 +23,7 @@ export function ToolCard({ href, icon, accent, title, desc }: Props) {
         overflow: "hidden",
       }}>
         <div style={{
-          position: "absolute", top: 0, left: 0, right: 0, height: 3,
+          position: "absolute", top: 0, left: 0, right: 0, height: 5,
           background: accent,
         }} />
         <div style={{ marginBottom: 16 }}>{icon}</div>

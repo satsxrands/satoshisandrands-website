@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Space_Mono, Nunito } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { JsonLd } from "@/components/JsonLd";
+import { NdebeleStripe } from "@/components/brand/NdebeleStripe";
 import "./globals.css";
 
 const organizationJsonLd = {
@@ -107,7 +108,9 @@ export default function RootLayout({
       <body className="min-h-full">
         <JsonLd id="organization-jsonld" data={organizationJsonLd} />
         <JsonLd id="website-jsonld" data={websiteJsonLd} />
+        <NdebeleStripe height={14} />
         {children}
+        <NdebeleStripe height={14} />
         <Analytics />
       </body>
     </html>

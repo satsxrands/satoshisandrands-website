@@ -96,7 +96,7 @@ export default function NewsPage() {
         </div>
       </nav>
 
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: "48px 40px 80px" }} className="market-content">
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 40px 80px" }} className="market-content">
         {/* Header */}
         <div style={{ marginBottom: 32 }}>
           <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 11, fontWeight: 900, color: "var(--gold)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>
@@ -162,66 +162,82 @@ export default function NewsPage() {
           </div>
         )}
 
-        {/* News list */}
+        {/* News tile grid — responsive 3/2/1 columns, fills the page horizontally to cut scroll length */}
         {!loading && !error && (
-          <div style={{ display: "grid", gap: 12 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+              gap: 16,
+            }}
+          >
             {filtered.map((item, i) => {
               const color = CATEGORY_COLORS[item.category] ?? "var(--gold)";
               return (
-                <div
+                <article
                   key={i}
                   style={{
+                    display: "flex",
+                    flexDirection: "column",
                     background: "var(--card)",
                     border: "1px solid var(--border)",
-                    borderLeft: `3px solid ${color}`,
+                    borderTop: `3px solid ${color}`,
                     borderRadius: 12,
-                    padding: "16px 20px",
+                    padding: "18px 18px 16px",
+                    minHeight: 240,
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
-                    <span style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 10, fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase", color, background: `${color}18`, border: `1px solid ${color}33`, padding: "3px 10px", borderRadius: 20 }}>
+                  {/* Tags row */}
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10, flexWrap: "wrap" }}>
+                    <span style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 10, fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase", color, background: `${color}18`, border: `1px solid ${color}33`, padding: "3px 9px", borderRadius: 20 }}>
                       {item.category}
                     </span>
                     {item.sentiment && (() => {
                       const s = SENTIMENT_CONFIG[item.sentiment];
                       return (
-                        <span style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 10, fontWeight: 900, letterSpacing: "0.08em", textTransform: "uppercase", color: s.color, background: s.bg, padding: "3px 10px", borderRadius: 20, display: "inline-flex", alignItems: "center", gap: 4 }}>
-                          <span style={{ fontSize: 8 }}>{s.dot}</span> {s.label}{item.sentimentScore > 0 ? ` ${item.sentimentScore}%` : ""}
+                        <span style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 10, fontWeight: 900, letterSpacing: "0.08em", textTransform: "uppercase", color: s.color, background: s.bg, padding: "3px 9px", borderRadius: 20, display: "inline-flex", alignItems: "center", gap: 4 }}>
+                          <span style={{ fontSize: 8 }}>{s.dot}</span> {s.label}
                         </span>
                       );
                     })()}
-                    <span style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 11, color: "var(--muted)" }}>
-                      {item.source}
-                    </span>
-                    <span style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 11, color: "var(--muted)", marginLeft: "auto" }}>
-                      {timeAgo(item.pubDate)}
-                    </span>
                   </div>
-                  <p style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 19, letterSpacing: "0.04em", color: "var(--white)", lineHeight: 1.1, marginBottom: 6 }}>
-                    {item.title}
-                  </p>
-                  {item.excerpt && (
-                    <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 600, color: "var(--muted)", lineHeight: 1.5, marginBottom: 12 }}>
-                      {item.excerpt}
-                    </p>
-                  )}
-                  <div style={{ display: "flex", gap: 16, alignItems: "center", justifyContent: "space-between" }}>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 900, color, letterSpacing: "0.04em", textDecoration: "none" }}
-                    >
-                      Read article →
-                    </a>
-                    <ShareButton title={item.title} url={item.url} />
+
+                  {/* Title + excerpt — flex: 1 pushes the footer down so all tiles align */}
+                  <div style={{ flex: 1 }}>
+                    <h2 style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 20, letterSpacing: "0.03em", color: "var(--white)", lineHeight: 1.12, marginBottom: 8, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                      {item.title}
+                    </h2>
+                    {item.excerpt && (
+                      <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 600, color: "var(--muted)", lineHeight: 1.5, marginBottom: 12, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                        {item.excerpt}
+                      </p>
+                    )}
                   </div>
-                </div>
+
+                  {/* Footer pinned to bottom of tile */}
+                  <div style={{ borderTop: "1px solid var(--border)", paddingTop: 10, marginTop: 4 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10, fontFamily: "var(--font-space-mono), monospace", fontSize: 11, color: "var(--muted)" }}>
+                      <span>{item.source}</span>
+                      <span style={{ marginLeft: "auto" }}>{timeAgo(item.pubDate)}</span>
+                    </div>
+                    <div style={{ display: "flex", gap: 12, alignItems: "center", justifyContent: "space-between" }}>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 12, fontWeight: 900, color, letterSpacing: "0.04em", textDecoration: "none" }}
+                      >
+                        Read article →
+                      </a>
+                      <ShareButton title={item.title} url={item.url} />
+                    </div>
+                  </div>
+                </article>
               );
             })}
 
             {filtered.length === 0 && (
-              <p style={{ fontFamily: "var(--font-space-mono), monospace", fontSize: 13, color: "var(--muted)", textAlign: "center", padding: "40px 0" }}>
+              <p style={{ gridColumn: "1 / -1", fontFamily: "var(--font-space-mono), monospace", fontSize: 13, color: "var(--muted)", textAlign: "center", padding: "40px 0" }}>
                 No news in this category right now.
               </p>
             )}

@@ -24,7 +24,7 @@ _Branch: redesign/stitch-foundation_
 
 ## Pending
 
-- **Visual review** by Trimm against `/tmp/stitch-satsxrands/screen.png`
+- **Visual review** by Trimm against `docs/design-reference/stitch-mockup.png`
   - Ndebele pattern density (current default opacity 0.12)
   - Hero CGT card border/shadow weight
   - Tool card 3px accent bar

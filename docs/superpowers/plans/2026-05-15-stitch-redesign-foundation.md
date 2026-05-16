@@ -2,13 +2,13 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Land the design-system foundation (tokens + Ndebele pattern asset + reusable component library) needed to rebuild the SatsxRands homepage to match the Stitch mockup at `/tmp/stitch-satsxrands/screen.png`, without yet touching the live homepage.
+**Goal:** Land the design-system foundation (tokens + Ndebele pattern asset + reusable component library) needed to rebuild the SatsxRands homepage to match the Stitch mockup at `docs/design-reference/stitch-mockup.png`, without yet touching the live homepage.
 
 **Architecture:** Build all new pieces behind a hidden `/design-system` preview route so visual review can happen against the mockup before any production page changes. Tokens live in `globals.css` as CSS variables (extending the existing set). Components live in `src/components/brand/*` and consume only tokens — never raw hex. The Ndebele pattern ships as a single SVG that recolors via `currentColor` + `--gold`. Homepage migration is a separate plan that consumes this library.
 
 **Tech Stack:** Next.js 16 app-router, React 19, Tailwind v4 (already wired), CSS variables for tokens, hand-authored SVG for the Ndebele pattern, existing Google Fonts (Bebas Neue / Space Mono / Nunito).
 
-**Reference asset:** `/tmp/stitch-satsxrands/screen.png` — keep open in a viewer while building.
+**Reference asset:** `docs/design-reference/stitch-mockup.png` — keep open in a viewer while building.
 
 ---
 
@@ -27,7 +27,7 @@
 - `src/app/globals.css:3-15` — extend `:root` token block with new tokens (accent scales, pattern opacity, motion). Existing tokens stay intact.
 
 **Test:**
-- Visual verification on `/design-system` against `/tmp/stitch-satsxrands/screen.png`. No Jest/RTL tests — this is presentational scaffolding.
+- Visual verification on `/design-system` against `docs/design-reference/stitch-mockup.png`. No Jest/RTL tests — this is presentational scaffolding.
 - After each component, run `npm run build` to catch type / import errors.
 
 ---
@@ -57,7 +57,7 @@ export default function DesignSystemPreview() {
         Stitch Redesign — Design System Preview
       </h1>
       <p style={{ color: "var(--muted)", marginTop: 8 }}>
-        Hidden route. Compare against /tmp/stitch-satsxrands/screen.png.
+        Hidden route. Compare against docs/design-reference/stitch-mockup.png.
       </p>
       <section id="tokens" style={{ marginTop: 48 }}>Tokens — placeholder</section>
       <section id="pattern" style={{ marginTop: 48 }}>Pattern — placeholder</section>
@@ -668,7 +668,7 @@ Expected: build succeeds with no TypeScript errors.
 
 - [ ] **Step 3: Visual diff vs mockup**
 
-Open `http://localhost:3000/design-system` and `/tmp/stitch-satsxrands/screen.png` side-by-side. Note any deltas in a follow-up task list (do not fix in this plan — capture for a v2 polish plan).
+Open `http://localhost:3000/design-system` and `docs/design-reference/stitch-mockup.png` side-by-side. Note any deltas in a follow-up task list (do not fix in this plan — capture for a v2 polish plan).
 
 - [ ] **Step 4: Commit**
 
@@ -698,7 +698,7 @@ gh pr create --title "Stitch redesign — design system foundation" --body "$(ca
 
 ## Test plan
 - [ ] Visit /design-system on the preview deployment
-- [ ] Diff against /tmp/stitch-satsxrands/screen.png — flag any meaningful gaps
+- [ ] Diff against docs/design-reference/stitch-mockup.png — flag any meaningful gaps
 - [ ] Verify no production routes changed (homepage still old design)
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

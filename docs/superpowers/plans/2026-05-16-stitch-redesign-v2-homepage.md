@@ -6,7 +6,7 @@
 
 **Architecture:** Replace the in-file 613-line homepage with a composition of brand-library primitives (`HeroPanel`, `BrandWordmark`, `NdebelePattern`, `ToolCard`, `SectionHeader`) on top of the existing sticky top nav. CGT shifts from a tool-grid card to a hero-card teaser linking to `/tax-tools/cgt`; the grid keeps 4 cards (Trader Classifier, Card Checker, Live Market Data, SA Crypto News). The existing hero "CRYPTO IN RANDS. TAX IN PLAIN ENGLISH." headline and "Latest from the Hub" / value-prop sections, if present below the tool grid, are preserved below the new Full Platform section as a secondary lane — tools become primary, content stays indexed.
 
-**Tech Stack:** Next.js 16 app router, React 19, TypeScript, brand library at `src/components/brand/`, no test framework added (smoke-verified via dev server + chrome-devtools-mcp screenshot comparison against `/tmp/stitch-satsxrands/screen.png`).
+**Tech Stack:** Next.js 16 app router, React 19, TypeScript, brand library at `src/components/brand/`, no test framework added (smoke-verified via dev server + chrome-devtools-mcp screenshot comparison against `docs/design-reference/stitch-mockup.png`).
 
 **Scope (locked):** Homepage only. Top nav, footer, other routes (`/learn`, `/blog`, `/tax-tools/*`, `/market`, `/news`) are NOT touched. New `PrimaryNav` brand component stays on `/design-system` only until a future plan.
 
@@ -177,7 +177,7 @@ Expected: `homepage 200`. If broken, inspect the dev server log at the path retu
 
 - [ ] **Step 4: Visual check via chrome-devtools-mcp**
 
-Navigate the existing chrome page to `http://localhost:3000/` and screenshot. Compare hero block against `/tmp/stitch-satsxrands/screen.png` top half. Verify wordmark + CGT card layout matches.
+Navigate the existing chrome page to `http://localhost:3000/` and screenshot. Compare hero block against `docs/design-reference/stitch-mockup.png` top half. Verify wordmark + CGT card layout matches.
 
 - [ ] **Step 5: Commit**
 

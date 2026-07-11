@@ -127,8 +127,8 @@ body {
 /* ── Article body styles ──────────────────────────────── */
 .article-body { font-family: var(--font-nunito), sans-serif; font-size: 15px; font-weight: 600; color: #C8C0B0; line-height: 1.8; }
 .article-body p { margin-bottom: 20px; }
-.article-body h2 { font-family: var(--font-bebas), sans-serif; font-size: 24px; letter-spacing: 0.04em; color: var(--white); margin: 36px 0 14px; }
-.article-body h3 { font-family: var(--font-bebas), sans-serif; font-size: 19px; letter-spacing: 0.04em; color: var(--white); margin: 28px 0 10px; }
+.article-body h2 { font-family: var(--font-bebas), sans-serif; font-size: 24px; letter-spacing: 0.04em; color: var(--white); margin: 36px 0 14px; scroll-margin-top: 90px; }
+.article-body h3 { font-family: var(--font-bebas), sans-serif; font-size: 19px; letter-spacing: 0.04em; color: var(--white); margin: 28px 0 10px; scroll-margin-top: 90px; }
 .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
 .article-body li { margin-bottom: 8px; }
 .article-body strong { color: var(--white); font-weight: 900; }

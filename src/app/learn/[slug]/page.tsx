@@ -167,7 +167,7 @@ export default async function ModuleDetailPage({ params }: Props) {
         }}
       >
         {/* Sidebar */}
-        <ModuleOutline module={module} activeLesson="lesson-1" />
+        <ModuleOutline module={module} />
 
         {/* Main Content Area */}
         <div
@@ -261,6 +261,7 @@ export default async function ModuleDetailPage({ params }: Props) {
           <LessonContent
             contentHTML={module.contentHTML}
             title={module.title}
+            lessons={module.lessons}
           />
 
           {/* Related Modules */}

@@ -1,13 +1,62 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import type { Module } from "@/content/learn/modules";
 
 interface ModuleOutlineProps {
   module: Module;
-  activeLesson?: string;
 }
 
-export function ModuleOutline({ module, activeLesson }: ModuleOutlineProps) {
+export function ModuleOutline({ module }: ModuleOutlineProps) {
+  const [activeLesson, setActiveLesson] = useState<string>(
+    module.lessons[0]?.id ?? "",
+  );
+  const visibleIds = useRef<Set<string>>(new Set());
+
+  // Scroll-spy: highlight the lesson whose section heading is at the top of
+  // the reading area. The asymmetric rootMargin creates a thin "active band"
+  // just below the sticky breadcrumb so exactly one heading counts as current.
+  useEffect(() => {
+    visibleIds.current = new Set();
+    const els = module.lessons
+      .map((l) => document.getElementById(l.id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (els.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) visibleIds.current.add(entry.target.id);
+          else visibleIds.current.delete(entry.target.id);
+        }
+        const firstVisible = module.lessons.find((l) =>
+          visibleIds.current.has(l.id),
+        );
+        if (firstVisible) {
+          setActiveLesson(firstVisible.id);
+        } else if (window.scrollY < 200) {
+          setActiveLesson(module.lessons[0]?.id ?? "");
+        }
+      },
+      { rootMargin: "-80px 0px -65% 0px", threshold: 0 },
+    );
+
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [module]);
+
+  const handleLessonClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
+    const el = document.getElementById(id);
+    if (!el) return; // no matching heading — let the browser handle the href
+    e.preventDefault();
+    setActiveLesson(id);
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `#${id}`);
+  };
+
   return (
     <aside
       style={{
@@ -58,6 +107,7 @@ export function ModuleOutline({ module, activeLesson }: ModuleOutlineProps) {
             <li key={lesson.id}>
               <a
                 href={`#${lesson.id}`}
+                onClick={(e) => handleLessonClick(e, lesson.id)}
                 style={{
                   display: "flex",
                   alignItems: "center",

@@ -1,15 +1,28 @@
 "use client";
 
 import { linkGlossaryTerms } from "@/utils/linkGlossaryTerms";
+import type { Lesson } from "@/content/learn/modules";
 
 interface LessonContentProps {
   contentHTML: string;
   title: string;
+  lessons?: Lesson[];
 }
 
-export function LessonContent({ contentHTML, title }: LessonContentProps) {
+export function LessonContent({ contentHTML, title, lessons }: LessonContentProps) {
+  // Give each section heading an id matching the corresponding lesson, so the
+  // sidebar outline can anchor-link to it and scroll-spy can track it. Headings
+  // are assigned in document order (verified 1:1 with lessons across all modules).
+  let headingIndex = 0;
+  const withAnchors = contentHTML.replace(/<h3(\s[^>]*)?>/g, (match, attrs = "") => {
+    if (/\bid=/.test(attrs)) return match; // don't clobber an explicit id
+    const id = lessons?.[headingIndex]?.id ?? `section-${headingIndex + 1}`;
+    headingIndex += 1;
+    return `<h3${attrs} id="${id}">`;
+  });
+
   // Auto-link glossary terms in the content
-  const linkedContent = linkGlossaryTerms(contentHTML);
+  const linkedContent = linkGlossaryTerms(withAnchors);
 
   return (
     <article

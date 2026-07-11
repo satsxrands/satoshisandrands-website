@@ -25,6 +25,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Pin the workspace root: /Users/base has its own package-lock.json, which
+  // Turbopack otherwise selects as root and then fails to resolve tailwindcss.
+  turbopack: { root: __dirname },
   async headers() {
     return [
       {

@@ -183,6 +183,63 @@ export const modules: Module[] = [
     relatedModules: ["bitcoin-basics"],
     publishedAt: new Date("2026-03-28"),
   },
+  {
+    slug: "ai-agent-payments",
+    title: "AI Agents & Machine Payments",
+    description: "AI agents are starting to pay for things by themselves, in stablecoins. What x402 is, why we built a live SA example, and what SARS says about it.",
+    category: "Crypto 101",
+    difficulty: "beginner",
+    estimatedTime: 15,
+    lessons: [
+      { id: "lesson-1", title: "Why We Built This", estimatedTime: 3 },
+      { id: "lesson-2", title: "The 30-Year-Old Error Code", estimatedTime: 4 },
+      { id: "lesson-3", title: "Why a SARS Tax Calculation?", estimatedTime: 4 },
+      { id: "lesson-4", title: "The Tax Reality", estimatedTime: 4 },
+    ],
+    contentHTML: `
+      <h2>AI Agents & Machine Payments</h2>
+      <p>An AI agent paid for a South African tax calculation — by itself, in stablecoins, on-chain, for half a US cent. This module explains why we built that demo, how the payment rail works, and why SARS still cares about every move a machine makes for you.</p>
+
+      <h3>Why We Built This</h3>
+      <p>We don't just write about crypto — we also build software for South African businesses. In 2026, AI agents crossed a line: they stopped just answering questions and started <em>doing</em> things — reading invoices, watching tender feeds, filing reports.</p>
+      <p>Then they hit a wall: <strong>an agent can't pay for anything.</strong> It has no bank card, can't pass a 3-D Secure prompt on your phone, and can't fill in a signup form for a subscription it needs for exactly one request.</p>
+      <p>Every useful service an agent might call — data, calculations, documents — sits behind payments built for humans. So we built a small payment gateway of our own and put two paid services behind it, to test the new machine-payment rail with a real, working example instead of a slide deck. What we learned became this lesson.</p>
+
+      <h3>The 30-Year-Old Error Code</h3>
+      <p>When the web's HTTP standard was written in 1997, its authors reserved a status code for a future that didn't exist yet: <strong>HTTP 402 — "Payment Required."</strong> For almost 30 years it sat unused, because there was no money the web could move natively.</p>
+      <p>Stablecoins finally filled it. A new open standard called <strong>x402</strong> turns that error code into a payment flow:</p>
+      <ul>
+        <li>The agent calls a paid service</li>
+        <li>The service answers <strong>402: Payment Required</strong> — here's the price, the token, and the address</li>
+        <li>The agent signs a stablecoin payment from its own wallet (no card, no login)</li>
+        <li>Payment settles on-chain in seconds — the service returns the data</li>
+      </ul>
+      <p>No signup. No subscription. No human in the loop. And because the amounts can be tiny (fractions of a cent), services can charge per call instead of per month.</p>
+      <p>For a machine, rands and dollars are the same friction: the cross-border payment a bank quotes R50 and three days for, an agent settles for a fraction of a cent, instantly.</p>
+
+      <h3>Why a SARS Tax Calculation?</h3>
+      <p>If you've seen our posts on this, you'll notice we keep using the same demo: an agent paying <strong>$0.005 USDC on Polygon</strong> for a <strong>SARS crypto-tax estimate</strong> — capital vs revenue, the R40,000 annual exclusion, the 40% inclusion rate. That choice is deliberate, for three reasons:</p>
+      <ul>
+        <li><strong>It's real.</strong> It's a live endpoint we run, not a mock-up. The agent asks, pays, and gets the answer back — you can watch the payment land on-chain.</li>
+        <li><strong>It's South African.</strong> Most agent-payment demos are American. We wanted the first one you see to speak SARS, rands, and our tax rules.</li>
+        <li><strong>It teaches the punchline.</strong> The service the machine paid for is itself a tax calculation — because the biggest thing SA crypto users miss about automation is what it does to their tax position. The demo and the lesson are the same thing.</li>
+      </ul>
+      <p>The estimate is educational, not tax advice — but the numbers it uses are the real SARS parameters.</p>
+
+      <h3>The Tax Reality</h3>
+      <p>Here's the part that doesn't change with the technology: <strong>SARS taxes every crypto disposal — even the ones a machine makes for you.</strong></p>
+      <ul>
+        <li>An agent spending USDC from your wallet is <em>you</em> disposing of an asset</li>
+        <li>Each disposal is a taxable event: gain or loss against your cost basis</li>
+        <li>Capital vs revenue treatment follows your conduct, not your software</li>
+        <li>"My agent did it" is not a defence — the wallet is yours, and so is the liability</li>
+      </ul>
+      <p>If agents start making hundreds of micro-payments on your behalf, that's hundreds of disposals to account for. The tech is new. The tax rules aren't.</p>
+      <p>Start with our <a href="/learn/sa-crypto-tax-overview">SA Crypto Tax Overview</a> to understand the fundamentals, and keep records from day one — machines are excellent at creating taxable events and terrible at keeping your SARS file.</p>
+    `,
+    relatedModules: ["sa-crypto-tax-overview", "ethereum-tokens"],
+    publishedAt: new Date("2026-07-10"),
+  },
 
   // ─── TRADING (Third) ─────────────────────────────────────────────────────────
   {
@@ -340,7 +397,7 @@ export const modules: Module[] = [
         <li>Forgetting to declare foreign exchange income</li>
       </ul>
     `,
-    relatedModules: ["capital-gains-calculation"],
+    relatedModules: ["capital-gains-calculation", "ai-agent-payments"],
     publishedAt: new Date("2026-03-28"),
   },
   {

@@ -155,11 +155,17 @@ body {
 .article-body td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--white); }
 .article-body tr:last-child td { border-bottom: none; }
 
+/* Agent-payments hero sub-callout */
+.hero-agent-callout:hover .hero-agent-callout-inner { background: rgba(245, 166, 35, 0.12); border-color: rgba(245, 166, 35, 0.45); }
+.hero-agent-callout:hover .hero-agent-cta { color: var(--gold-hi); }
+
 /* Stitch v2 mobile polish */
 @media (max-width: 768px) {
   .v2-hero > div { grid-template-columns: 1fr !important; gap: 32px !important; padding: 48px 20px !important; }
   .v2-tools > div { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
   .v2-platform > div { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .hero-agent-callout { padding: 0 20px 44px !important; }
+  .hero-agent-callout-inner { padding: 16px 18px !important; }
 }
 @media (max-width: 480px) {
   .v2-tools > div { grid-template-columns: 1fr !important; }

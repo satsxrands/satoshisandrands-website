@@ -105,7 +105,7 @@ export default function Home() {
       {/* Hero — Stitch v2 */}
       <section className="v2-hero" style={{ position: "relative", overflow: "hidden", background: "var(--bg)" }}>
         <NdebelePattern opacity={0.15} />
-        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "0 auto", padding: "96px 32px 80px" }}>
+        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", maxWidth: 1200, margin: "0 auto", padding: "96px 32px 36px" }}>
           <div>
             <BrandWordmark size="hero" />
             <p style={{ marginTop: 24, color: "var(--white)", opacity: 0.85, fontSize: 18, lineHeight: 1.5, maxWidth: 420, fontFamily: "var(--font-nunito)" }}>
@@ -123,6 +123,28 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        {/* Agent Payments — hero sub-callout (educational) */}
+        <Link href="/learn/ai-agent-payments" className="hero-agent-callout" style={{ position: "relative", display: "block", maxWidth: 1200, margin: "0 auto", padding: "0 32px 72px", textDecoration: "none" }}>
+          <div className="hero-agent-callout-inner" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap", background: "rgba(245, 166, 35, 0.07)", border: "1px solid rgba(245, 166, 35, 0.22)", borderRadius: 12, padding: "18px 24px", transition: "background 200ms, border-color 200ms" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, minWidth: 0 }}>
+              <span style={{ flexShrink: 0, fontFamily: "var(--font-nunito), sans-serif", fontSize: 10, fontWeight: 900, letterSpacing: "0.12em", color: "var(--bg)", background: "var(--gold)", borderRadius: 999, padding: "4px 10px", textTransform: "uppercase" }}>
+                New
+              </span>
+              <div style={{ minWidth: 0 }}>
+                <h2 style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: 22, letterSpacing: "0.03em", color: "var(--white)", lineHeight: 1.05, margin: 0 }}>
+                  MACHINES CAN PAY EACH OTHER NOW
+                </h2>
+                <p style={{ fontFamily: "var(--font-nunito), sans-serif", fontSize: 13.5, fontWeight: 600, color: "var(--muted)", lineHeight: 1.5, margin: "4px 0 0" }}>
+                  The 30-year-old web error code that stablecoins finally switched on — see the live South African example.
+                </p>
+              </div>
+            </div>
+            <span className="hero-agent-cta" style={{ flexShrink: 0, fontFamily: "var(--font-bebas), sans-serif", fontSize: 15, letterSpacing: "0.08em", color: "var(--gold)", whiteSpace: "nowrap" }}>
+              SEE HOW IT WORKS →
+            </span>
+          </div>
+        </Link>
       </section>
 
       {/* Tools — Stitch v2 */}

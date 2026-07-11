@@ -218,7 +218,7 @@ export const modules: Module[] = [
       <p>For a machine, rands and dollars are the same friction: the cross-border payment a bank quotes R50 and three days for, an agent settles for a fraction of a cent, instantly.</p>
 
       <h3>Why a SARS Tax Calculation?</h3>
-      <p>If you've seen our posts on this, you'll notice we keep using the same demo: an agent paying <strong>$0.005 USDC on Polygon</strong> for a <strong>SARS crypto-tax estimate</strong> — capital vs revenue, the R40,000 annual exclusion, the 40% inclusion rate. That choice is deliberate, for three reasons:</p>
+      <p>If you've seen our posts on this, you'll notice we keep using the same demo: an agent paying <strong>$0.005 USDC on Polygon</strong> for a <strong>SARS crypto-tax estimate</strong> — capital vs revenue, the R50,000 annual exclusion, the 40% inclusion rate. That choice is deliberate, for three reasons:</p>
       <ul>
         <li><strong>It's real.</strong> It's a live endpoint we run, not a mock-up. The agent asks, pays, and gets the answer back — you can watch the payment land on-chain.</li>
         <li><strong>It's South African.</strong> Most agent-payment demos are American. We wanted the first one you see to speak SARS, rands, and our tax rules.</li>
@@ -362,7 +362,7 @@ export const modules: Module[] = [
       <p><strong>1. Capital Gains Tax (CGT)</strong> on selling crypto for profit (long-term)</p>
       <ul>
         <li>Only 40% of gains are taxable (inclusion rate)</li>
-        <li>Basic exemption: R40,000/year per person</li>
+        <li>Basic exemption: R50,000/year per person (up from R40,000 for 2025/26 and earlier)</li>
         <li>Tax depends on your marginal rate (up to 45%)</li>
       </ul>
 
@@ -437,7 +437,7 @@ export const modules: Module[] = [
       <h3>SA Tax Liability</h3>
       <p>Taxable gain = Total gain × 40% (inclusion rate)</p>
       <p>Tax owed = Taxable gain × Your marginal tax rate</p>
-      <p>After R40,000 annual exemption:</p>
+      <p>After R50,000 annual exemption:</p>
       <ul>
         <li>18% bracket: 40% × 18% = 7.2% effective</li>
         <li>26% bracket: 40% × 26% = 10.4% effective</li>
